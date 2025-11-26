@@ -25,7 +25,7 @@ Jasmine:
   
 Sam:
 
-Make food pop ups (ingredients, item, etc)
+- Make food pop ups (ingredients, item, etc)
 - Implemet a quote of items
 - Make orders appear one at a time
 - When the order is correct, make order disappear and some kind of sound or indication it was correct
