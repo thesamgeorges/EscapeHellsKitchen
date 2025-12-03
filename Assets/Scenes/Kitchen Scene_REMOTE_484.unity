@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD
-  m_IndirectSpecularColor: {r: 0.44425294, g: 0.4937008, b: 0.5730806, a: 1}
-=======
   m_IndirectSpecularColor: {r: 0.44425243, g: 0.49370003, b: 0.57307994, a: 1}
->>>>>>> origin/main
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -221,8 +217,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 123.5, y: 1.39, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &17552227
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +300,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/main
 --- !u!1 &74279783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,8 +2210,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &561868273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2280,7 +2271,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332ef6a447c3b94489f35ad845e8b7ad, type: 3}
->>>>>>> origin/main
 --- !u!1001 &576798437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4758,8 +4748,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1244588510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4882,7 +4870,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda928f79ba6b9549ae9bb8ed004f92a, type: 3}
->>>>>>> origin/main
 --- !u!1001 &1259201131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4978,8 +4965,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.2093325, y: 1.7536258, z: 1.7699103}
   m_Center: {x: 0.00000023841858, y: 0.876813, z: 0.008142263}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1284421193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5120,7 +5105,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302295897}
   m_Mesh: {fileID: -8450988764484285844, guid: 16b4e784331947644ba637420bfeffd6, type: 3}
->>>>>>> origin/main
 --- !u!1001 &1311383920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7388,8 +7372,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.2093325, y: 1.7536256, z: 1.7699103}
   m_Center: {x: 0, y: 0.87681293, z: 0.008142263}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1921997827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7447,7 +7429,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab3d93fd2764dc45988adf7d412c1b3, type: 3}
->>>>>>> origin/main
 --- !u!1 &1963892779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7870,8 +7851,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e27740dc0f71e6242933939d6050fd41, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1001 &2079616796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7929,7 +7908,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2557362e4e8bcfe4486030fd8a78182a, type: 3}
->>>>>>> origin/main
 --- !u!1 &2122191708
 GameObject:
   m_ObjectHideFlags: 0
@@ -8420,12 +8398,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8036924227747719335, guid: eaca212aa46b17c4d8276b0ab9e8a432, type: 3}
       insertIndex: 1
-<<<<<<< HEAD
-=======
       addedObject: {fileID: 509131594}
     - targetCorrespondingSourceObject: {fileID: 8036924227747719335, guid: eaca212aa46b17c4d8276b0ab9e8a432, type: 3}
       insertIndex: 2
->>>>>>> origin/main
       addedObject: {fileID: 1008308714}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6624193102473414149, guid: eaca212aa46b17c4d8276b0ab9e8a432, type: 3}
@@ -9673,8 +9648,6 @@ SceneRoots:
   - {fileID: 663995014}
   - {fileID: 1472694395}
   - {fileID: 1691629146}
-<<<<<<< HEAD
-=======
   - {fileID: 471865266}
   - {fileID: 1752667689}
   - {fileID: 1685011791}
@@ -9694,4 +9667,3 @@ SceneRoots:
   - {fileID: 1921997827}
   - {fileID: 17552230}
   - {fileID: 1302295898}
->>>>>>> origin/main
