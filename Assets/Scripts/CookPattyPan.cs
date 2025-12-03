@@ -10,7 +10,9 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     public GameObject manager;
     public GameObject cookedMeat;
     public GameObject rawMeat;
+    public GameObject cheese;
     private bool isCooked;
+    private bool isCheese;
     TextMeshPro promptText;  
 
     void Awake()
@@ -22,7 +24,9 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     {
         rawMeat.SetActive(false);
         cookedMeat.SetActive(false);
+        cheese.SetActive(false);
         isCooked = false;
+        isCheese = true;
     }
     void Update()
     {
@@ -34,6 +38,10 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         if(manager.GetComponent<handsScript>().Get() == "raw meat")
         {
             promptText.text= "E - cook";
+        }
+        else if(manager.GetComponent<handsScript>().Get() == "cheese" && isCooked == true)
+        {
+            promptText.text= " E - Put Cheese";
         }
         else if(manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true)
         {
@@ -58,11 +66,25 @@ public class CookPattyPan : MonoBehaviour, IInteractable
             manager.GetComponent<handsScript>().Set("nothing");
             rawMeat.SetActive(true);
             StartCoroutine(Cook());
-
-       }else if(manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true){ //if holding nothing and cooked is true, pick up cooked meat
-            manager.GetComponent<handsScript>().Set("cooked patty");
+       }
+       else if(manager.GetComponent<handsScript>().Get() == "cheese" && isCooked == true){ //if holding nothing and cooked is true, pick up cooked meat
+            manager.GetComponent<handsScript>().Set("nothing");
+            cheese.SetActive(true);
+            isCheese = true;
+        }
+        else if(manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true){ //if holding nothing and cooked is true, pick up cooked meat
+            if (isCheese == true)
+            {
+                manager.GetComponent<handsScript>().Set("cheese patty");
+            }
+            else
+            {
+                manager.GetComponent<handsScript>().Set("cooked patty");
+            }
             cookedMeat.SetActive(false);
+            cheese.SetActive(false);
             isCooked = false;
+            isCheese = false;
         }     
     }
 }

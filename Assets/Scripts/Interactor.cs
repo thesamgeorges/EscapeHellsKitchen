@@ -12,7 +12,7 @@ public interface IInteractable
 public class Interactor : MonoBehaviour
 {
     public Transform InteractorSource; // should be main camera
-    public float InteractRange = 8f; // how far away/close you need to be to interact. recomend: 8f
+    public float InteractRange = 1f; // how far away/close you need to be to interact. recomend: 1f
     public float radius = 0.5f; // how wide your aim needs to be to look at the object. reccomend: 0.5f
     public LayerMask interactMask; // layer should be "interactable"
     
