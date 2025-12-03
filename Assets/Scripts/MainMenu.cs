@@ -4,12 +4,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
    
-    [SerializeField] private string gameSceneName = "Kitchen Scene";
 
     public void PlayGame()
     {
         // Load the game scene
-        SceneManager.LoadScene(gameSceneName);
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void OpenOptions()
