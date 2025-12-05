@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tomato
   - CanPickUp
+  - FinalProduct
   layers:
   - Default
   - TransparentFX
