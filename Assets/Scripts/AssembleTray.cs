@@ -9,8 +9,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
     public GameObject cheese;
     public GameObject lettuce;
     public GameObject topBun;
-    public GameObject buttomBun;
-    public GameObject burger;
+    public GameObject bottomBun;
     public GameObject plate;
     int step;
     bool isCheese;
@@ -23,15 +22,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
     }
     void Start()
     {
-        cookedPatty.SetActive(false);
-        cheese.SetActive(false);
-        lettuce.SetActive(false);
-        topBun.SetActive(false);
-        buttomBun.SetActive(false);
-        burger.SetActive(false);
-        plate.SetActive(false);
-        isCheese = false;
-        step = 0;
+        erase();
     }
 
     void Update()
@@ -44,6 +35,9 @@ public class AssembleTray : MonoBehaviour, IInteractable
         if(manager.GetComponent<handsScript>().Get() == "plate" && step == 0)
         {
             promptText.text= "E - place plate";
+        }else if(manager.GetComponent<handsScript>().Get() == "nothing" && step == 0)
+        {
+            promptText.text= "tray has no actions, needs plate";
         }
         else if(manager.GetComponent<handsScript>().Get() == "bun" && step == 1)
         {
@@ -53,19 +47,19 @@ public class AssembleTray : MonoBehaviour, IInteractable
         {
             promptText.text= " E - place burger";
         }
-        else if(manager.GetComponent<handsScript>().Get() == "cheese patty" && step == 3)
+        else if(manager.GetComponent<handsScript>().Get() == "cheese patty" && step == 2)
         {
             promptText.text= " E - place cheeseburger";
         }
-        else if(manager.GetComponent<handsScript>().Get() == "lettuce" && step == 4)
+        else if(manager.GetComponent<handsScript>().Get() == "lettuce" && step == 3)
         {
             promptText.text = "E - place lettuce";
         }
-        else if(manager.GetComponent<handsScript>().Get() == "bun" && step == 5)
+        else if(manager.GetComponent<handsScript>().Get() == "bun" && step == 4)
         {
             promptText.text = "E - place bun";
         }
-        else if(manager.GetComponent<handsScript>().Get() == "nothing" && step == 6)
+        else if(manager.GetComponent<handsScript>().Get() == "nothing" && step == 5)
         {
             if (isCheese == true)
             {
@@ -77,7 +71,21 @@ public class AssembleTray : MonoBehaviour, IInteractable
         {
             promptText.text = "E - grab unfinished plate";
         }
-
+        else
+        {
+            promptText.text= "tray currently has no actions";
+        }
+    }
+    public void erase()
+    {
+        cookedPatty.SetActive(false);
+        cheese.SetActive(false);
+        lettuce.SetActive(false);
+        topBun.SetActive(false);
+        bottomBun.SetActive(false);
+        plate.SetActive(false);
+        isCheese = false;
+        step = 0;
     }
     public void Interact()
     {
@@ -88,13 +96,83 @@ public class AssembleTray : MonoBehaviour, IInteractable
                 {
                     step+=1;
                     manager.GetComponent<handsScript>().Set("nothing");
-                    plate.SetActive(false);
+                    plate.SetActive(true);
                 }
-                    break;
+                break;
             case 1: 
-                    break;
+                if (manager.GetComponent<handsScript>().Get() == "bun")
+                {
+                    step+=1;
+                    manager.GetComponent<handsScript>().Set("nothing");
+                    bottomBun.SetActive(true);
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    erase();
+                    manager.GetComponent<handsScript>().Set("unfinished burger");
+                }
+                break;
+            case 2: 
+                if (manager.GetComponent<handsScript>().Get() == "cooked patty")
+                {
+                    step+=1;
+                    manager.GetComponent<handsScript>().Set("nothing");
+                    cookedPatty.SetActive(true);
+                }else if (manager.GetComponent<handsScript>().Get() == "cheese patty")
+                {
+                    step+=1;
+                    manager.GetComponent<handsScript>().Set("nothing");
+                    cookedPatty.SetActive(true);
+                    cheese.SetActive(true);
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    erase();
+                    manager.GetComponent<handsScript>().Set("unfinished burger");
+                }
+                break;
+            case 3: 
+                if (manager.GetComponent<handsScript>().Get() == "lettuce")
+                {
+                    step+=1;
+                    manager.GetComponent<handsScript>().Set("nothing");
+                    lettuce.SetActive(true);
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    erase();
+                    manager.GetComponent<handsScript>().Set("unfinished burger");
+                }
+                break;
+            case 4: 
+                if (manager.GetComponent<handsScript>().Get() == "bun")
+                {
+                    step+=1;
+                    manager.GetComponent<handsScript>().Set("nothing");
+                    topBun.SetActive(true);
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    erase();
+                    manager.GetComponent<handsScript>().Set("unfinished burger");
+                }
+                break;
+            case 5: 
+                if (manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    step=0;
+                    erase();
+                    if(isCheese==true){
+                        manager.GetComponent<handsScript>().Set("cheeseburger");                       
+                    }
+                    else
+                    {
+                        manager.GetComponent<handsScript>().Set("burger");
+                    }
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    erase();
+                    manager.GetComponent<handsScript>().Set("unfinished burger");
+                }
+                break;
             default:
-                    break;
+                break;
         }
             
                

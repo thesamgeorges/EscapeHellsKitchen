@@ -26,7 +26,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         cookedMeat.SetActive(false);
         cheese.SetActive(false);
         isCooked = false;
-        isCheese = true;
+        isCheese = false;
     }
     void Update()
     {
