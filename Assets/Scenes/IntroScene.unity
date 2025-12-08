@@ -7404,10 +7404,10 @@ MonoBehaviour:
   dialoguePanel: {fileID: 351815076}
   lines:
   - 'Gordon: Ello I''m Gordon. You must be my new chef.  Welcome to Hell''s Kitchen.
-    (Click to continue) '
-  - 'Gordon: Let''s get started on your training. (Click to continue)'
+    (Click Enter to continue) '
+  - 'Gordon: Let''s get started on your training. (Click Enter to continue)'
   - 'Gordon: Walk ova to the ingredients shelf and I''ll show you how to cook some
-    bangin food (Click to continue)'
+    bangin food (Click Enter to continue)'
   tutorial: {fileID: 1140195384}
   playerController: {fileID: 1963237457}
 --- !u!4 &2112287819

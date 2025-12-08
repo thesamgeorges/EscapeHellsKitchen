@@ -41,8 +41,8 @@ public class GordonDialogue : MonoBehaviour
         if (!dialogueActive)
             return;
 
-        // Click or Spacebar to advance
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        // Click Enter to continue
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             AdvanceDialogue();
         }
