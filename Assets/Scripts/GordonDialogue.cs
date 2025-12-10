@@ -14,7 +14,7 @@ public class GordonDialogue : MonoBehaviour
 
     [Header("Tutorial")]
     public IntroTutorial tutorial;            // reference to your tutorial script
-    public MonoBehaviour playerController;    // your movement script (optional)
+    public MonoBehaviour playerController;    // your movement script
 
     private int currentIndex = 0;
     private bool dialogueActive = true;
@@ -33,7 +33,9 @@ public class GordonDialogue : MonoBehaviour
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
 
-      
+        // ❌ Player should NOT move while Gordon talks
+        if (playerController != null)
+            playerController.enabled = false;
     }
 
     void Update()
@@ -41,7 +43,7 @@ public class GordonDialogue : MonoBehaviour
         if (!dialogueActive)
             return;
 
-        // Click Enter to continue
+        // Press Enter or Space to continue
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             AdvanceDialogue();
@@ -70,7 +72,7 @@ public class GordonDialogue : MonoBehaviour
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
 
-        // Re-enable player movement (optional)
+        // ✅ Re-enable player movement now that he's done talking
         if (playerController != null)
             playerController.enabled = true;
 
@@ -85,5 +87,3 @@ public class GordonDialogue : MonoBehaviour
         }
     }
 }
-
-
