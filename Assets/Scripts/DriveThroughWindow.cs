@@ -7,6 +7,7 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
     public GameObject manager;
     public AudioSource AudioSource;
     public AudioClip soundEffect;
+    public GameObject gordon;
 
     public void Interact()
     {
@@ -19,6 +20,8 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
         }
         else
         {
+            gordon.GetComponent<GordonJumpscares>().scare();
+            manager.GetComponent<handsScript>().removeLife();
             Console.WriteLine("ur not holding a burger");
         }
     }

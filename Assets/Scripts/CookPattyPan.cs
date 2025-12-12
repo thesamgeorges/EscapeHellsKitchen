@@ -20,7 +20,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     private bool isBurnt;
     TextMeshPro promptText;  
     
-
+    public GameObject gordon;
     void Awake()
     {
         var promptTransform = transform.Find("InteractPrompt");
@@ -75,13 +75,14 @@ public class CookPattyPan : MonoBehaviour, IInteractable
 
     IEnumerator SetTimer()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         if(empty == false)
         {
             isBurnt = true;
             isCooked = false;
             cookedMeat.SetActive(false);
             burnt.SetActive(true);
+            gordon.GetComponent<GordonJumpscares>().scare();
             manager.GetComponent<handsScript>().removeLife();
         }
     }

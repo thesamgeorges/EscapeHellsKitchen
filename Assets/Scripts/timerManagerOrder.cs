@@ -11,7 +11,7 @@ public class timerManagerOrder : MonoBehaviour
     public TextMeshProUGUI txt;
     public GameObject manager;
     public GameObject orderManager;
-
+    public GameObject gordon;
     void Start()
     {
         ResetTime();
@@ -33,6 +33,7 @@ public class timerManagerOrder : MonoBehaviour
         {
             manager.GetComponent<handsScript>().removeLife();
             orderManager.GetComponent<OrderManager>().CompleteOrder();
+            gordon.GetComponent<GordonJumpscares>().scare();
         }
     }
 }
