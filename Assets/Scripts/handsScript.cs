@@ -21,7 +21,7 @@ public class handsScript : MonoBehaviour
     {
         hasCoolerKey = false;
         hasDungeonKey = false;
-        hasStorageKey = true;
+        hasStorageKey = false; 
         order.SetActive(false);
         life3.SetActive(true);
         life2.SetActive(true);
@@ -35,24 +35,6 @@ public class handsScript : MonoBehaviour
     public string Get()
     {
         return obj;
-    }
-
-    public void obtainKey(string key)
-    {
-        switch (key)
-        {
-            case "cooler":
-                hasCoolerKey = true;
-                break;
-            case "dungeon":
-                hasDungeonKey = true;
-                break;
-            case "storage":
-                hasStorageKey = true;
-                break;
-            default:
-                break;
-        }
     }
 
     public void removeLife()

@@ -49,7 +49,7 @@ public class Ice : MonoBehaviour, IInteractable
                 break;
             case 2:
                 key.SetActive(false);
-                //manager.GetComponent<handsScript>().GainKey(3);
+                manager.GetComponent<handsScript>().hasDungeonKey=true;
                 break;
             default: 
                 break;
