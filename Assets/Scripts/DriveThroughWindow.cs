@@ -1,15 +1,22 @@
+using System;
 using UnityEngine;
 
-public class DriveThroughWindow : MonoBehaviour
+public class DriveThroughWindow : MonoBehaviour, IInteractable
 {
     public OrderManager orderManager;
+    public GameObject manager;
 
-    private void OnTriggerEnter(Collider other)
+    public void Interact()
     {
-        if (other.CompareTag("FinalProduct"))
+
+        if (manager.GetComponent<handsScript>().Get() == orderManager.GetComponent<OrderManager>().Get())
         {
             orderManager.CompleteOrder();
-            Destroy(other.gameObject); // Remove delivered item
+            manager.GetComponent<handsScript>().Set("nothing");
+        }
+        else
+        {
+            Console.WriteLine("ur not holding a burger");
         }
     }
 }
