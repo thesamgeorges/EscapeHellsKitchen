@@ -8885,6 +8885,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 840232262}
     - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 1198749314}
+    - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d2c4cb2b3cbb4b52a5a2ebc4c9eed84, type: 3}
+    - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
       propertyPath: orderManager
       value: 
       objectReference: {fileID: 319510444}
