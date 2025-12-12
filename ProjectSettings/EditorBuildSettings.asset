@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CageScene.unity
     guid: d2980c26be4494e08b1b293a428d44bc
   - enabled: 1
+    path: Assets/Scenes/StorageScene.unity
+    guid: 6ed5c5eb5c23241bcb959ea1760be447
+  - enabled: 1
     path: Assets/Scenes/CoolerScene.unity
     guid: c3b0371f0116046a6a44b942ec41285e
   - enabled: 1

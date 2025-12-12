@@ -3,6 +3,8 @@ using System;
 public class OrderManager : MonoBehaviour
 {
     public GameObject[] orderPanels; // Assign in Inspector
+    public GameObject PlayerUI; //currentOrder popup inside Player's UI 
+    public GameObject OrderTimer; // timermanager(order) inside Player's UI
 
     public string currentOrder;
 
@@ -18,6 +20,9 @@ public class OrderManager : MonoBehaviour
     
     public void StartNewOrder()
     {
+        PlayerUI.SetActive(true); // makes the player's You have an order! UI popup appear
+        OrderTimer.GetComponent<timerManagerOrder>().ResetTime(); // resets the timer for popup
+
         System.Random random = new System.Random();
         int choice = random.Next(2);
 

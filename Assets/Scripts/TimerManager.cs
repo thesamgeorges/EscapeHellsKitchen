@@ -16,7 +16,7 @@ public class TimerManager : MonoBehaviour
     }
     void Update ()
     {
-        TimeLeft = 600f - Time.time - startTime;
+        TimeLeft = 600f - (Time.time - startTime);
         TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
         int minutes = Mathf.FloorToInt(TimeLeft/60);
         int seconds = Mathf.FloorToInt(TimeLeft%60);

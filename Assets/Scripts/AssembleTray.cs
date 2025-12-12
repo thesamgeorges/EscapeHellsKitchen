@@ -123,6 +123,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     manager.GetComponent<handsScript>().Set("nothing");
                     cookedPatty.SetActive(true);
                     cheese.SetActive(true);
+                    isCheese=true;
                 }else if(manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     erase();
@@ -157,7 +158,6 @@ public class AssembleTray : MonoBehaviour, IInteractable
                 if (manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     step=0;
-                    erase();
                     if(isCheese==true){
                         manager.GetComponent<handsScript>().Set("cheeseburger");                       
                     }
@@ -165,6 +165,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     {
                         manager.GetComponent<handsScript>().Set("burger");
                     }
+                    erase();
                 }else if(manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     erase();

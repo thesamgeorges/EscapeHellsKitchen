@@ -14,7 +14,7 @@ public class ExitDoor : MonoBehaviour
 
         if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasStorageKey == true)
         {
-            SceneManager.LoadSceneAsync("CoolerScene");
+            SceneManager.LoadSceneAsync("StorageScene");
         }
          
     }
