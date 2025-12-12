@@ -5,19 +5,59 @@ using TMPro;
 
 public class handsScript : MonoBehaviour
 {
-    public TextMeshPro textMesh;
+    public TMP_Text textMesh;
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
+    public GameObject order;
     private string obj;
-    private bool isNoteOpen;
     private GameObject note;
+    private bool isNoteOpen;
+    private int lives;
+    public bool hasCoolerKey;
+    public bool hasDungeonKey;
+    public bool hasStorageKey;
     void Start()
     {
+        hasCoolerKey = false;
+        hasDungeonKey = false;
+        hasStorageKey = false; 
+        order.SetActive(false);
+        life3.SetActive(true);
+        life2.SetActive(true);
+        life1.SetActive(true);
+        lives = 3;
         obj = "nothing";
+        isNoteOpen = false;
+        note = null;
         textMesh.text = "Currently holding: nothing";
     }
     public string Get()
     {
         return obj;
     }
+
+    public void removeLife()
+    {
+        lives=lives-1;
+
+        switch (lives)
+        {
+            case 2:
+                life3.SetActive(false);
+                break;
+            case 1:
+                life2.SetActive(false);
+                break;
+            case 0:
+                life1.SetActive(false);
+                break;
+            default:
+                break;
+        }
+
+    }
+
     public void openNote(GameObject notes)
     {
         note = notes;
@@ -34,7 +74,6 @@ public class handsScript : MonoBehaviour
             note = null;
         }
     }
-
     public void Set(string item)
     {
         obj = item;
