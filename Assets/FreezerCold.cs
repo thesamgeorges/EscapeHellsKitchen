@@ -1,37 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class FrezerCold : MonoBehaviour
 {
     public GameObject border;
     private bool active;
-    private bool foundMatches;
-
+    public bool foundMatches;
+    public GameObject manager;
     void Start()
     {
         border.SetActive(false);
         active = false;
         foundMatches = false;
-        StartTimer();
+        StartCoroutine(Pulse());
+        StartCoroutine(StartTimer());
     }
 
     IEnumerator StartTimer()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(3f);
         if(foundMatches!=true){
             kill();
         }
     }
 
-    void kill()
+    IEnumerator Pulse()
     {
-        SceneManager.LoadScene("Kitchen Scene");
-    }
-
-    void Update()
-    {
+        yield return new WaitForSeconds(30f);
         if (foundMatches==false){
             if (active == true)
             {
@@ -43,6 +42,26 @@ public class FrezerCold : MonoBehaviour
                 border.SetActive(true);
                 active = true;
             }
+        }
+        else{
+            {
+                border.SetActive(false);
+                active = false;
+            }
+            StartCoroutine(Pulse());
+        }
+    }
+    void kill()
+    {
+        manager.GetComponent<handsScript>().removeLife();
+        SceneManager.LoadScene("Kitchen Scene");
+    }
+
+    void Update()
+    {
+        if (foundMatches == true)
+        {
+            border.SetActive(false);
         }
     }
 }
