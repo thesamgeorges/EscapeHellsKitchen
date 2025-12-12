@@ -14,14 +14,14 @@ public class handsScript : MonoBehaviour
     private GameObject note;
     private bool isNoteOpen;
     private int lives;
-    private bool hasCoolerKey;
-    private bool hasDungeonKey;
-    private bool hasStorageKey;
+    public bool hasCoolerKey;
+    public bool hasDungeonKey;
+    public bool hasStorageKey;
     void Start()
     {
         hasCoolerKey = false;
         hasDungeonKey = false;
-        hasStorageKey = false;
+        hasStorageKey = true;
         order.SetActive(false);
         life3.SetActive(true);
         life2.SetActive(true);
