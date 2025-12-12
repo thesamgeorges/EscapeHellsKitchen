@@ -1443,6 +1443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheeseBurgerImage
       objectReference: {fileID: 0}
+    - target: {fileID: 7589143344108714649, guid: 77f782b1197774e09831b659bf2eeca4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2056,6 +2060,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2294317635904630474, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1198749314}
+    - target: {fileID: 2294317635904630474, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
       propertyPath: PlayerUI
       value: 
       objectReference: {fileID: 456249553}
@@ -2063,6 +2071,18 @@ PrefabInstance:
       propertyPath: OrderTimer
       value: 
       objectReference: {fileID: 2050157556}
+    - target: {fileID: 2294317635904630474, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
+      propertyPath: burgerPanel
+      value: 
+      objectReference: {fileID: 1142551829}
+    - target: {fileID: 2294317635904630474, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
+      propertyPath: cheesePanel
+      value: 
+      objectReference: {fileID: 297074101}
+    - target: {fileID: 2294317635904630474, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
+      propertyPath: orderHereSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 91dbe76d3d968416882c7f8462632af9, type: 3}
     - target: {fileID: 2294317635904630474, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
       propertyPath: orderPanels.Array.data[0]
       value: 
@@ -2074,6 +2094,10 @@ PrefabInstance:
     - target: {fileID: 5389761506816956619, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
       propertyPath: m_Name
       value: OrderManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389761506816956619, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6873,6 +6897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BurgerImage
       objectReference: {fileID: 0}
+    - target: {fileID: 7617504578772539843, guid: c4c71b8659d81451c9e3e33f74d8d344, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9182,8 +9210,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997821225271672230, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
+      propertyPath: gordon
+      value: 
+      objectReference: {fileID: 339255044}
     - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
       propertyPath: manager
       value: 
@@ -9214,10 +9246,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3884539146224107518, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
       insertIndex: 0
       addedObject: {fileID: 319510443}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6997821225271672230, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
 --- !u!4 &1357541720 stripped
 Transform:
