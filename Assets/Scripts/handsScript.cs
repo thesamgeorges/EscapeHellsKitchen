@@ -97,20 +97,4 @@ public class handsScript : MonoBehaviour
         obj = item;
         textMesh.text = "Currently holding: " + obj;
     }
-    void Update()
-    {
-        // DEBUG: Press B to instantly hold a burger
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Set("burger");
-            Debug.Log("DEBUG: Holding burger now");
-        }
-
-        // DEBUG: Press C to hold a cheeseburger
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Set("cheeseburger");
-            Debug.Log("DEBUG: Holding cheeseburger now");
-        }
-    }
 }
