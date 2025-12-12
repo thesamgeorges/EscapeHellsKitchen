@@ -55,7 +55,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     }
     IEnumerator Cook()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(10f);
         isCooked = true;
         rawMeat.SetActive(false);
         cookedMeat.SetActive(true);
