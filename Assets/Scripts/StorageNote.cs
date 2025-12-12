@@ -5,13 +5,9 @@ using UnityEngine;
 public class StorageNote : MonoBehaviour, IInteractable
 {
     public GameObject note;
-
-    void Start()
-    {
-        note.SetActive(false);
-    }
+    public GameObject manager;
     public void Interact()
     {
-        note.SetActive(true);
+        manager.GetComponent<handsScript>().openNote(note);
     }
 }
