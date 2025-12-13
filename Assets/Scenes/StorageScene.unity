@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 1725239881}
-  manager: {fileID: 0}
+  manager: {fileID: 1487020360}
 --- !u!1 &402045428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,6 +5355,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a49246d412985445a0c3c9acb36bdeb, type: 3}
+--- !u!1 &1487020360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3939216948937486771, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+  m_PrefabInstance: {fileID: 211085038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1509621977
 PrefabInstance:
   m_ObjectHideFlags: 0
