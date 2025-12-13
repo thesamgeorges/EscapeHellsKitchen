@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitDoor : MonoBehaviour
+public class ToStorageDoor : MonoBehaviour
 {
     public GameObject manager;
     void OnTriggerEnter(Collider coll)
