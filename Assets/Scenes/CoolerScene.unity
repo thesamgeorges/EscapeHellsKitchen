@@ -5410,6 +5410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 1908956171}
+  foundMatches: 0
+  manager: {fileID: 152378573}
 --- !u!1001 &720353337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6216,6 +6218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 152378573}
+  cold: {fileID: 712043033}
 --- !u!4 &826854845
 Transform:
   m_ObjectHideFlags: 0

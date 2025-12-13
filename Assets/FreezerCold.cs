@@ -22,7 +22,7 @@ public class FrezerCold : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(300f);
         if(foundMatches!=true){
             kill();
         }
@@ -30,7 +30,7 @@ public class FrezerCold : MonoBehaviour
 
     IEnumerator Pulse()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(1f);
         if (foundMatches==false){
             if (active == true)
             {
@@ -42,13 +42,13 @@ public class FrezerCold : MonoBehaviour
                 border.SetActive(true);
                 active = true;
             }
+            StartCoroutine(Pulse());
         }
         else{
             {
                 border.SetActive(false);
                 active = false;
             }
-            StartCoroutine(Pulse());
         }
     }
     void kill()
