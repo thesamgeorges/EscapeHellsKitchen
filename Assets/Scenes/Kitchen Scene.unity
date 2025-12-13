@@ -4861,6 +4861,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 456249553}
     - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1672134002}
+    - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: hasStorageKey
       value: 0
       objectReference: {fileID: 0}
@@ -11151,6 +11155,11 @@ Transform:
   - {fileID: 43831989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1672134002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7116061273728813682, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+  m_PrefabInstance: {fileID: 824897657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1685011791
 PrefabInstance:
   m_ObjectHideFlags: 0

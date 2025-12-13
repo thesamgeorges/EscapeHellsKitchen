@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class handsScript : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class handsScript : MonoBehaviour
     public bool hasCoolerKey;
     public bool hasDungeonKey;
     public bool hasStorageKey;
+    public Transform player;
     void Start()
     {
         hasCoolerKey = false;
@@ -51,6 +53,9 @@ public class handsScript : MonoBehaviour
                 break;
             case 0:
                 life1.SetActive(false);
+                SceneManager.LoadSceneAsync("CageScene");
+                player.localPosition = new Vector3(-2.04976f, 1.48f, -3.3407f);
+                player.localRotation = Quaternion.Euler(0f, -2.125f, 0f);
                 break;
             default:
                 break;
