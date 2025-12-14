@@ -76,22 +76,21 @@ public class IntroTutorial : MonoBehaviour
                 break;
 
             case TutorialStep.GetPatty:
-                dialogueText.text = "Next, pick up a raw patty.";
+                dialogueText.text = "Next, pick up raw beef.";
                 break;
 
             case TutorialStep.PlaceRawMeatOnPan:
-                dialogueText.text = "Now place the raw patty on the pan to start cooking.";
+                dialogueText.text = "Now place the raw beef on the pan to start cooking.";
                 break;
 
             case TutorialStep.CookPatty:
-                dialogueText.text = "Let it cook, then grab the cooked patty.";
+                dialogueText.text = "Let it cook for 10 seconds, then grab the cooked patty.";
                 break;
 
             case TutorialStep.AssembleBurger:
                 dialogueText.text =
                     "Patty’s cooked! Grab it from the pan and place it on the bun at the assembly tray.";
                 break;
-
 
             case TutorialStep.AddLettuce:
                 dialogueText.text = "Now add some lettuce to the burger.";
@@ -106,7 +105,7 @@ public class IntroTutorial : MonoBehaviour
                 break;
 
             case TutorialStep.Complete:
-                dialogueText.text = "Nice job! You know how to make a proper burger.";
+                dialogueText.text = "Now you know how to make a propa burger. Hope you're ready for your totally normal first day at Hell's Kitchen.";
                 tutorialActive = false;
                 tutorialComplete = true;
                 break;
