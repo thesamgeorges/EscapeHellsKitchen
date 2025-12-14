@@ -13,7 +13,7 @@ public class MiniFridgeDoors : MonoBehaviour, IInteractable
     {
         isOpen = false;
         door1.transform.rotation = Quaternion.Euler(0f, 90, 0f);
-        door2.transform.rotation = Quaternion.Euler(0f, 180, 0f);
+        door2.transform.rotation = Quaternion.Euler(0f, 90, 0f);
     }
 
     public void Interact()
@@ -21,13 +21,13 @@ public class MiniFridgeDoors : MonoBehaviour, IInteractable
         if (isOpen)
         {
             door1.transform.rotation = Quaternion.Euler(0f, 380, 0f);
-            door2.transform.rotation = Quaternion.Euler(0f, 300, 0f);
+            door2.transform.rotation = Quaternion.Euler(0f, 0, 0f);
             isOpen = false;
         }
         else
         {
             door1.transform.rotation = Quaternion.Euler(0f, 180, 0f);
-            door2.transform.rotation = Quaternion.Euler(0f, 180, 0f);
+            door2.transform.rotation = Quaternion.Euler(0f, 90, 0f);
             isOpen = true;
         }
     }
