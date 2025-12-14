@@ -1,50 +1,50 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-
 
 public class CookPattyPan : MonoBehaviour, IInteractable
 {
     public GameObject manager;
     public GameObject cookedMeat;
     public GameObject rawMeat;
+    public IntroTutorial introTutorial;   
+
     private bool isCooked;
-    TextMeshPro promptText;  
+    TextMeshPro promptText;
 
     void Awake()
     {
         var promptTransform = transform.Find("InteractPrompt");
         promptText = promptTransform.GetComponent<TextMeshPro>();
     }
+
     void Start()
     {
         rawMeat.SetActive(false);
         cookedMeat.SetActive(false);
         isCooked = false;
     }
+
     void Update()
     {
         if (!promptText.gameObject.activeSelf)
-        {
             return;
-        }  
 
-        if(manager.GetComponent<handsScript>().Get() == "raw meat")
+        if (manager.GetComponent<handsScript>().Get() == "raw meat")
         {
-            promptText.text= "E - cook";
+            promptText.text = "E - cook";
         }
-        else if(manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true)
+        else if (manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true)
         {
-            promptText.text= " E - grab patty";
+            promptText.text = "E - grab patty";
         }
         else
         {
             promptText.text = "Pan has no actions";
         }
-
     }
+
     IEnumerator Cook()
     {
         yield return new WaitForSeconds(10f);
@@ -52,17 +52,39 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         rawMeat.SetActive(false);
         cookedMeat.SetActive(true);
     }
+
     public void Interact()
     {
-       if (manager.GetComponent<handsScript>().Get() == "raw meat"){ // if holding raw meat, cooks patty
-            manager.GetComponent<handsScript>().Set("nothing");
+        var hands = manager.GetComponent<handsScript>();
+        if (hands == null)
+        {
+            Debug.LogWarning("CookPattyPan: manager has no handsScript!");
+            return;
+        }
+
+        if (hands.Get() == "raw meat")
+        {
+            // Put raw meat on pan and start cooking
+            hands.Set("nothing");
             rawMeat.SetActive(true);
             StartCoroutine(Cook());
-
-       }else if(manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true){ //if holding nothing and cooked is true, pick up cooked meat
-            manager.GetComponent<handsScript>().Set("cooked patty");
+        }
+        else if (hands.Get() == "nothing" && isCooked == true)
+        {
+            // Pick up cooked patty
+            hands.Set("cooked patty");
             cookedMeat.SetActive(false);
             isCooked = false;
-        }     
+
+            // Tell the tutorial the patty is now cooked + picked up
+            if (introTutorial != null)
+            {
+                introTutorial.OnPattyCooked();
+            }
+            else
+            {
+                Debug.LogWarning("CookPattyPan: introTutorial reference is NULL!");
+            }
+        }
     }
 }
