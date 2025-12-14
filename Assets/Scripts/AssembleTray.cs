@@ -32,9 +32,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
     void Update()
     {
         if (!promptText.gameObject.activeSelf)
-        {
             return;
-        }
 
         var hands = manager.GetComponent<handsScript>().Get();
 
@@ -64,18 +62,11 @@ public class AssembleTray : MonoBehaviour, IInteractable
         }
         else if (hands == "bun" && step == 4)
         {
-            promptText.text = "E - place bun";
+            promptText.text = "E - place top bun";
         }
         else if (hands == "nothing" && step == 5)
         {
-            if (isCheese)
-            {
-                promptText.text = "E - grab cheeseburger";
-            }
-            else
-            {
-                promptText.text = "E - grab burger";
-            }
+            promptText.text = isCheese ? "E - grab cheeseburger" : "E - grab burger";
         }
         else if (hands == "nothing")
         {
@@ -113,7 +104,6 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     hands.Set("nothing");
                     plate.SetActive(true);
 
-                    // notify the tutorial
                     if (introTutorial != null)
                         introTutorial.OnPlatePlacedOnTray();
                 }
@@ -127,7 +117,6 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     hands.Set("nothing");
                     bottomBun.SetActive(true);
 
-                    // notify tutorial that the bun was placed
                     if (introTutorial != null)
                         introTutorial.OnFirstBunPlaced();
                 }
@@ -212,17 +201,10 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     erase();
 
                     if (isCheese)
-                    {
                         hands.Set("cheeseburger");
-                    }
                     else
-                    {
                         hands.Set("burger");
-                    }
                 }
-                break;
-
-            default:
                 break;
         }
     }

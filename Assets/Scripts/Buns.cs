@@ -1,16 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Buns : MonoBehaviour, IInteractable
 {
     public GameObject manager;
-    public IntroTutorial introTutorial;   // ?? reference to the tutorial
+    public IntroTutorial introTutorial;   // reference to the tutorial
 
     public void Interact()
     {
@@ -21,19 +16,21 @@ public class Buns : MonoBehaviour, IInteractable
             return;
         }
 
-        if (hands.Get() == "nothing")
-        {
-            hands.Set("bun");
+        string before = hands.Get();
+        Debug.Log("Buns.Interact: was holding '" + before + "', now giving 'bun'");
 
-            // ?? Notify tutorial that bun was picked up
-            if (introTutorial != null)
-            {
-                introTutorial.OnBunPickedUp();
-            }
-            else
-            {
-                Debug.LogWarning("Buns: introTutorial reference is NULL!");
-            }
+        // ✅ Always give a bun, no matter what we were holding
+        hands.Set("bun");
+
+        // Let the tutorial know a bun was picked up.
+        // IntroTutorial ignores this unless currentStep == GetBun.
+        if (introTutorial != null)
+        {
+            introTutorial.OnBunPickedUp();
+        }
+        else
+        {
+            Debug.LogWarning("Buns: introTutorial reference is NULL!");
         }
     }
 }

@@ -8,7 +8,9 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     public GameObject manager;
     public GameObject cookedMeat;
     public GameObject rawMeat;
-    public IntroTutorial introTutorial;   
+
+    // 🔥 Hook into your tutorial
+    public IntroTutorial introTutorial;
 
     private bool isCooked;
     TextMeshPro promptText;
@@ -31,11 +33,13 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         if (!promptText.gameObject.activeSelf)
             return;
 
-        if (manager.GetComponent<handsScript>().Get() == "raw meat")
+        var hands = manager.GetComponent<handsScript>().Get();
+
+        if (hands == "raw meat")
         {
             promptText.text = "E - cook";
         }
-        else if (manager.GetComponent<handsScript>().Get() == "nothing" && isCooked == true)
+        else if (hands == "nothing" && isCooked)
         {
             promptText.text = "E - grab patty";
         }
@@ -47,10 +51,18 @@ public class CookPattyPan : MonoBehaviour, IInteractable
 
     IEnumerator Cook()
     {
+        // simulate cook time
         yield return new WaitForSeconds(10f);
+
         isCooked = true;
         rawMeat.SetActive(false);
         cookedMeat.SetActive(true);
+
+        // ✅ Tell the tutorial the patty is now cooked
+        if (introTutorial != null)
+        {
+            introTutorial.OnPattyCooked();
+        }
     }
 
     public void Interact()
@@ -62,29 +74,19 @@ public class CookPattyPan : MonoBehaviour, IInteractable
             return;
         }
 
+        // Start cooking if holding raw meat
         if (hands.Get() == "raw meat")
         {
-            // Put raw meat on pan and start cooking
             hands.Set("nothing");
             rawMeat.SetActive(true);
             StartCoroutine(Cook());
         }
-        else if (hands.Get() == "nothing" && isCooked == true)
+        // Pick up cooked patty when done
+        else if (hands.Get() == "nothing" && isCooked)
         {
-            // Pick up cooked patty
             hands.Set("cooked patty");
             cookedMeat.SetActive(false);
             isCooked = false;
-
-            // Tell the tutorial the patty is now cooked + picked up
-            if (introTutorial != null)
-            {
-                introTutorial.OnPattyCooked();
-            }
-            else
-            {
-                Debug.LogWarning("CookPattyPan: introTutorial reference is NULL!");
-            }
         }
     }
 }

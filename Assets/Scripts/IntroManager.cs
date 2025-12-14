@@ -7,15 +7,15 @@ public class IntroTutorial : MonoBehaviour
     {
         None,
         GetPlate,
-        PlacePlate,   
+        PlacePlate,
         GetBun,
         PlaceFirstBun,
         GetPatty,
         PlaceRawMeatOnPan,
         CookPatty,
-        AddLettuce,
-        AddTopBun,
         AssembleBurger,
+        AddLettuce,      // after patty placed
+        AddTopBun,       // after lettuce placed
         DeliverBurger,
         Complete
     }
@@ -63,6 +63,10 @@ public class IntroTutorial : MonoBehaviour
                 dialogueText.text = "Alright chef, first grab a plate.";
                 break;
 
+            case TutorialStep.PlacePlate:
+                dialogueText.text = "Now place the plate on the assembly tray.";
+                break;
+
             case TutorialStep.GetBun:
                 dialogueText.text = "Good. Now grab a bun from the station.";
                 break;
@@ -75,13 +79,19 @@ public class IntroTutorial : MonoBehaviour
                 dialogueText.text = "Next, pick up a raw patty.";
                 break;
 
+            case TutorialStep.PlaceRawMeatOnPan:
+                dialogueText.text = "Now place the raw patty on the pan to start cooking.";
+                break;
+
             case TutorialStep.CookPatty:
-                dialogueText.text = "Take that patty to the grill and cook it.";
+                dialogueText.text = "Let it cook, then grab the cooked patty.";
                 break;
 
             case TutorialStep.AssembleBurger:
-                dialogueText.text = "Great. Now place the cooked patty on the bun.";
+                dialogueText.text =
+                    "Patty’s cooked! Grab it from the pan and place it on the bun at the assembly tray.";
                 break;
+
 
             case TutorialStep.AddLettuce:
                 dialogueText.text = "Now add some lettuce to the burger.";
@@ -100,11 +110,6 @@ public class IntroTutorial : MonoBehaviour
                 tutorialActive = false;
                 tutorialComplete = true;
                 break;
-
-            case TutorialStep.PlacePlate:
-                dialogueText.text = "Now place the plate on the assembly tray.";
-                break;
-
         }
     }
 
@@ -131,11 +136,8 @@ public class IntroTutorial : MonoBehaviour
         if (!tutorialActive || tutorialComplete) return;
         if (currentStep != TutorialStep.GetBun) return;
 
-        if (tutorialBunObject != null)
-            tutorialBunObject.SetActive(false);
+       
 
-        // OLD: SetStep(TutorialStep.GetPatty);
-        // NEW:
         SetStep(TutorialStep.PlaceFirstBun);
     }
 
@@ -147,9 +149,6 @@ public class IntroTutorial : MonoBehaviour
         SetStep(TutorialStep.GetPatty);
     }
 
-
-
-
     public void OnPattyPickedUp()
     {
         if (!tutorialActive || tutorialComplete) return;
@@ -158,25 +157,37 @@ public class IntroTutorial : MonoBehaviour
         if (tutorialPattyObject != null)
             tutorialPattyObject.SetActive(false);
 
+        SetStep(TutorialStep.PlaceRawMeatOnPan);
+    }
+
+    public void OnRawMeatPlacedOnPan()
+    {
+        if (!tutorialActive || tutorialComplete) return;
+        if (currentStep != TutorialStep.PlaceRawMeatOnPan) return;
+
         SetStep(TutorialStep.CookPatty);
     }
 
     public void OnPattyCooked()
     {
         if (!tutorialActive || tutorialComplete) return;
-        if (currentStep != TutorialStep.CookPatty) return;
 
+        // Force step progression to AssembleBurger
         SetStep(TutorialStep.AssembleBurger);
     }
+
+
 
     public void OnBurgerAssembled()
     {
         if (!tutorialActive || tutorialComplete) return;
         if (currentStep != TutorialStep.AssembleBurger) return;
 
+        // (Optional) turn on a "finished burger" dummy object
         if (tutorialBurgerObject != null)
             tutorialBurgerObject.SetActive(true);
 
+        // 👉 go to lettuce step, NOT deliver yet
         SetStep(TutorialStep.AddLettuce);
     }
 
