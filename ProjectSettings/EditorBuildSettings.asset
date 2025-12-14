@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 6daf790aa00c946b297a8ea769a34eed
   - enabled: 1
-    path: Assets/Scenes/Kitchen Scene.unity
+    path: Assets/Scenes/BaseScene.unity
+    guid: f5e73fffdd0b14a5a85402006b2fac17
+  - enabled: 1
+    path: Assets/Scenes/KitchenScene.unity
     guid: 8386c15396331154fbeddc8503a33f48
   - enabled: 1
     path: Assets/Scenes/CageScene.unity

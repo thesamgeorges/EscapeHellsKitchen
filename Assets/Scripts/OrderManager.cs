@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class OrderManager : MonoBehaviour
 {
     public GameObject[] orderPanels; // Assign in Inspector
@@ -53,7 +54,7 @@ public class OrderManager : MonoBehaviour
             panel.SetActive(false); // have the panel gone by defaul
         }
 
-        if (currentOrder == "burger")
+        if (currentOrder == "burger"&& SceneManager.GetActiveScene().name == "KitchenScene")
         {
             orderPanels[0].SetActive(true);            
         }

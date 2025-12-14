@@ -5,16 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class ToStorageDoor : MonoBehaviour
 {
-    public GameObject manager;
+    private handsScript manager;
+    void Start()
+    {
+        manager = FindObjectOfType<handsScript>();
+    }
     void OnTriggerEnter(Collider coll)
     {
 
         GameObject collidedWith = coll.gameObject;
 
-
         if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasStorageKey == true)
         {
-            SceneManager.LoadSceneAsync("StorageScene");
+            SceneLoader.Instance.LoadStorageScene();
+            SceneLoader.Instance.UnloadScene("KitchenScene");
+            SceneLoader.Instance.UnloadScene("CoolerScene");
+            SceneLoader.Instance.UnloadScene("CageScene");
         }
          
     }

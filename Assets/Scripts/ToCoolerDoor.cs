@@ -5,16 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class ToCoolerDoor : MonoBehaviour
 {
-    public GameObject manager;
+    private handsScript manager;
+    void Start()
+    {
+        manager = FindObjectOfType<handsScript>();
+    }
     void OnTriggerEnter(Collider coll)
     {
 
         GameObject collidedWith = coll.gameObject;
 
-
-        if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasCoolerKey == true)
+        if (collidedWith.CompareTag("Player"))
         {
-            SceneManager.LoadSceneAsync("CoolerScene");
+            SceneLoader.Instance.LoadCoolerScene();
+            SceneLoader.Instance.UnloadScene("StorageScene");
         }
          
     }

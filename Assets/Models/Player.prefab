@@ -98,6 +98,10 @@ MonoBehaviour:
   life2: {fileID: 8930192858406316835}
   life3: {fileID: 859753084262217908}
   order: {fileID: 9153933990599105209}
+  hasCoolerKey: 0
+  hasDungeonKey: 0
+  hasStorageKey: 0
+  player: {fileID: 7204244351244041457}
 --- !u!1 &859753084262217908
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +490,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1453627449907075883}
+  manager: {fileID: 236044332006554914}
+  orderManager: {fileID: 0}
+  gordon: {fileID: 0}
 --- !u!1 &3267108669446112856
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,16 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class ToKitchenDoor : MonoBehaviour
 {
-    public GameObject manager;
+    private handsScript manager;
+    void Start()
+    {
+        manager = FindObjectOfType<handsScript>();
+    }
     void OnTriggerEnter(Collider coll)
     {
 
         GameObject collidedWith = coll.gameObject;
 
-
         if (collidedWith.CompareTag("Player"))
         {
-            SceneManager.LoadSceneAsync("Kitchen Scene");
+            SceneLoader.Instance.LoadKitchenScene();
+            SceneLoader.Instance.UnloadScene("StorageScene");
+            SceneLoader.Instance.UnloadScene("CoolerScene");
         }
          
     }
