@@ -145,12 +145,8 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     hands.Set("nothing");
                     cookedPatty.SetActive(true);
                     cheese.SetActive(true);
-                    isCheese = true;
-
-                    if (introTutorial != null)
-                        introTutorial.OnBurgerAssembled();
-                }
-                else if (hands.Get() == "nothing")
+                    isCheese=true;
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     erase();
                     hands.Set("unfinished burger");
@@ -197,13 +193,19 @@ public class AssembleTray : MonoBehaviour, IInteractable
                 // Finished burger: pick it up
                 if (hands.Get() == "nothing")
                 {
-                    step = 0;
-                    erase();
-
-                    if (isCheese)
-                        hands.Set("cheeseburger");
+                    step=0;
+                    if(isCheese==true){
+                        manager.GetComponent<handsScript>().Set("cheeseburger");                       
+                    }
                     else
-                        hands.Set("burger");
+                    {
+                        manager.GetComponent<handsScript>().Set("burger");
+                    }
+                    erase();
+                }else if(manager.GetComponent<handsScript>().Get() == "nothing")
+                {
+                    erase();
+                    manager.GetComponent<handsScript>().Set("unfinished burger");
                 }
                 break;
         }
