@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class AssembleTray : MonoBehaviour, IInteractable
 {
-    public GameObject manager;
+    private handsScript manager;
     public GameObject cookedPatty;
     public GameObject cheese;
     public GameObject lettuce;
@@ -23,6 +23,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
     void Start()
     {
         erase();
+        manager = FindObjectOfType<handsScript>();
     }
 
     void Update()

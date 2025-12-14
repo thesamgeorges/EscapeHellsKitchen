@@ -54,7 +54,7 @@ public class OrderManager : MonoBehaviour
             panel.SetActive(false); // have the panel gone by defaul
         }
 
-        if (currentOrder == "burger"&& SceneManager.GetActiveScene().name == "KitchenScene")
+        if (currentOrder == "burger")
         {
             orderPanels[0].SetActive(true);            
         }

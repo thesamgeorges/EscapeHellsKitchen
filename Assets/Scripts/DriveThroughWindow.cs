@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class DriveThroughWindow : MonoBehaviour, IInteractable
 {
-    public OrderManager orderManager;
-    public GameObject manager;
     public AudioSource AudioSource;
     public AudioClip soundEffect;
-    public GameObject gordon;
-
+    private GordonJumpscares gordon;
+    private handsScript manager;
+    private OrderManager orderManager;
+    void Start()
+    {
+        manager = FindObjectOfType<handsScript>();
+        orderManager = FindObjectOfType<OrderManager>();
+        gordon = FindObjectOfType<GordonJumpscares>();
+    }
     public void Interact()
     {
 

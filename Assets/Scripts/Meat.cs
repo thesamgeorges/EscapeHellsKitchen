@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class Meat : MonoBehaviour, IInteractable
 {
-    public GameObject manager;
+    private handsScript manager;
+    void Start()
+    {
+        manager = FindObjectOfType<handsScript>();
+    }
+
     public void Interact()
     {
         if (manager.GetComponent<handsScript>().Get()=="nothing"){

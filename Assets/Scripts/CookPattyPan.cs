@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class CookPattyPan : MonoBehaviour, IInteractable
 {
-    public GameObject manager;
     public GameObject cookedMeat;
     public GameObject rawMeat;
     public GameObject cheese;
@@ -18,9 +17,9 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     private bool isCheese;
     private bool empty;
     private bool isBurnt;
+    private handsScript manager;
     TextMeshPro promptText;  
-    
-    public GameObject gordon;
+    private GordonJumpscares gordon;
     void Awake()
     {
         var promptTransform = transform.Find("InteractPrompt");
@@ -35,6 +34,8 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         isCooked = false;
         empty = true;
         isBurnt = false;
+        manager = FindObjectOfType<handsScript>();
+        gordon = FindObjectOfType<GordonJumpscares>();
     }
     void Update()
     {
@@ -66,7 +67,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     IEnumerator Cook()
     {
         source.PlayOneShot(sizzle);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         isCooked = true;
         rawMeat.SetActive(false);
         cookedMeat.SetActive(true);

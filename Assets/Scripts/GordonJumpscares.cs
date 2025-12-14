@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GordonJumpscares : MonoBehaviour
 {
     public Transform gordon;
-    public GameObject Gordon;
+    public GameObject body;
     public GameObject cam;
     public AudioSource source;
     public AudioClip ScareClip;
@@ -15,13 +15,13 @@ public class GordonJumpscares : MonoBehaviour
 
     void Start()
     {
-      Gordon.SetActive(false);  
+      body.SetActive(false);  
       overlay.SetActive(false);
     }
     IEnumerator SetTimer()
     {
         yield return new WaitForSeconds(3f);
-        Gordon.SetActive(false);
+        body.SetActive(false);
         overlay.SetActive(false);
         scriptToDisable.enabled = true;
     }
@@ -30,7 +30,7 @@ public class GordonJumpscares : MonoBehaviour
         source.PlayOneShot(ScareClip);
         scriptToDisable.enabled = false;
         overlay.SetActive(true);
-        Gordon.SetActive(true);
+        body.SetActive(true);
         Transform camT = cam.transform;
         gordon.SetParent(camT);
         gordon.localPosition = new Vector3(2.2f, -4.75f, .8f);

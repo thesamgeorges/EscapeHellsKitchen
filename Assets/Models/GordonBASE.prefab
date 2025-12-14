@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gordon: {fileID: 8956894724868365969}
-  Gordon: {fileID: 5936200183882505765}
+  body: {fileID: 1162047232007117723}
   cam: {fileID: 0}
   source: {fileID: 0}
   ScareClip: {fileID: 8300000, guid: 04b8bd59f147b4b9a8311047ed0ee7dd, type: 3}
@@ -358,11 +358,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gordon
       objectReference: {fileID: 0}
+    - target: {fileID: 8883865314873225318, guid: e43c672b64e34412d89c3b3900b7de96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43c672b64e34412d89c3b3900b7de96, type: 3}
+--- !u!1 &1162047232007117723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8883865314873225318, guid: e43c672b64e34412d89c3b3900b7de96, type: 3}
+  m_PrefabInstance: {fileID: 7739928143987485693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1975878884246339873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8071018722059283164, guid: e43c672b64e34412d89c3b3900b7de96, type: 3}
