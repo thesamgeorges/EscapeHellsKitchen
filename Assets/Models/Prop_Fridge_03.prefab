@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4760972286492889733
+--- !u!1001 &6267285218397055279
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1725716480995302253, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
       propertyPath: m_Name
-      value: Prop_Fridge_03 Variant
+      value: Prop_Fridge_03
       objectReference: {fileID: 0}
     - target: {fileID: 2069730942669504983, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,23 +62,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9071684330132066067, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4718008352554771189}
+      addedObject: {fileID: 1664772774491304619}
     - targetCorrespondingSourceObject: {fileID: 5296420690638241397, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7507280430009927411}
+      addedObject: {fileID: 6649607286257601180}
   m_SourcePrefab: {fileID: 100100000, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
---- !u!1 &833998946805624048 stripped
+--- !u!1 &2267971693405902682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5296420690638241397, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
-  m_PrefabInstance: {fileID: 4760972286492889733}
+  m_PrefabInstance: {fileID: 6267285218397055279}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &7507280430009927411
+--- !u!65 &6649607286257601180
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833998946805624048}
+  m_GameObject: {fileID: 2267971693405902682}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -93,27 +93,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3723499, y: 0.5276767, z: 0.058242943}
   m_Center: {x: 0.18617494, y: -0.000000014901161, z: 0.029121472}
---- !u!1 &3688116949272953080 stripped
+--- !u!1 &2865788485220744018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8159552492646978173, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
-  m_PrefabInstance: {fileID: 4760972286492889733}
+  m_PrefabInstance: {fileID: 6267285218397055279}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4609231652824849814 stripped
+--- !u!1 &3106575987712927292 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9071684330132066067, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
-  m_PrefabInstance: {fileID: 4760972286492889733}
+  m_PrefabInstance: {fileID: 6267285218397055279}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4718008352554771189
+--- !u!114 &1664772774491304619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4609231652824849814}
+  m_GameObject: {fileID: 3106575987712927292}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848eafa9414264df394d1d41f813649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door1: {fileID: 3688116949272953080}
-  door2: {fileID: 833998946805624048}
+  door1: {fileID: 2865788485220744018}
+  door2: {fileID: 2267971693405902682}
