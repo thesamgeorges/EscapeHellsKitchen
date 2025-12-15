@@ -311,10 +311,6 @@ PrefabInstance:
       propertyPath: orderManager
       value: 
       objectReference: {fileID: 918232293}
-    - target: {fileID: 9153933990599105209, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -380,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00e84452f4b4403486bd3aeabe69445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  milkActive: 00000000000000000000000000000000000000000000000000000000
 --- !u!4 &655703438
 Transform:
   m_ObjectHideFlags: 0
@@ -985,11 +982,11 @@ GameObject:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1431526309}
   - {fileID: 1472694395}
   - {fileID: 578243173}
   - {fileID: 1863123692}
   - {fileID: 259700053}
-  - {fileID: 1431526309}
   - {fileID: 706933743}
   - {fileID: 918232292}
   - {fileID: 655703438}
