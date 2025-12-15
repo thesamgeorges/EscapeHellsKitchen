@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
     CharacterController cc;
     void Start()
     {
-        LoadKitchenScene();
+        LoadMenu();
     }
 
     void Awake()
@@ -26,9 +26,30 @@ public class SceneLoader : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    public void LoadCageScene()
+
+    public void LoadMenu()
     {
-        SceneManager.LoadSceneAsync("CageScene", LoadSceneMode.Additive);
+        var op = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+        op.completed += _ =>
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainMenu"));
+        };  
+    }
+    public void LoadCageScene(bool inCage)
+    {
+        var op = SceneManager.LoadSceneAsync("CageScene", LoadSceneMode.Additive);
+        op.completed += _ =>
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("CageScene"));
+        };
+        if (inCage)
+        {
+           // teleport(new Vector3()); 
+        }
+        else
+        {
+           // teleport(new Vector3()); 
+        }
     }
     public void LoadKitchenScene()
     {

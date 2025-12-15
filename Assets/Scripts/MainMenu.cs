@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Load the game scene
-        SceneManager.LoadScene(gameSceneName);
+        SceneLoader.Instance.LoadKitchenScene();
     }
 
     public void OpenOptions()
