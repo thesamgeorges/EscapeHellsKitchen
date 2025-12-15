@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 public class OrderManager : MonoBehaviour
 {
     public GameObject[] orderPanels; // Assign in Inspector
@@ -11,10 +12,11 @@ public class OrderManager : MonoBehaviour
     public AudioClip orderHereSound;
     public string currentOrder;
     public bool hasOrder;
+    private handsScript manager;
 
     void Start()
     {
-        StartNewOrder();
+        manager = FindAnyObjectByType<handsScript>();
     }
 
     public string Get()
@@ -39,6 +41,8 @@ public class OrderManager : MonoBehaviour
         
         System.Random random = new System.Random();
         int choice = random.Next(2);
+
+        if (manager.inTutorial == true){ choice = 0;}
 
         if (choice == 0)
         {

@@ -6,6 +6,8 @@ using UnityEngine;
 public class Buns : MonoBehaviour, IInteractable
 {
     private handsScript manager;
+    private IntroTutorial tut;
+    
     void Start()
     {
         manager = FindObjectOfType<handsScript>();
@@ -15,6 +17,11 @@ public class Buns : MonoBehaviour, IInteractable
     {
         if (manager.GetComponent<handsScript>().Get()=="nothing"){
             manager.GetComponent<handsScript>().Set("bun");
-        }  
+        }
+        if (manager.inTutorial == true)
+        {
+            tut = FindAnyObjectByType<IntroTutorial>();
+            tut.OnBunPickedUp();
+        }
     }
 }

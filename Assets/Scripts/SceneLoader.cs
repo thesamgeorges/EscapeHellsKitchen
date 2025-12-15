@@ -10,9 +10,13 @@ public class SceneLoader : MonoBehaviour
     CharacterController cc;
     public GameObject Player;
     public GameObject canvas;
+    public GameObject manager;
+    public OrderManager orderManager;
     void Start()
     {
         LoadMenu();
+        Player.SetActive(false);
+        canvas.SetActive(false);
     }
 
     void Awake()
@@ -37,6 +41,7 @@ public class SceneLoader : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("TutorialScene"));
             Player.SetActive(true);
             canvas.SetActive(true);
+            manager.GetComponent<handsScript>().inTutorial = true;
             teleport(new Vector3(3.24f, 0.84f, 16.85f));
         };  
     }

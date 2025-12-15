@@ -20,6 +20,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     private handsScript manager;
     TextMeshPro promptText;  
     private GordonJumpscares gordon;
+    private IntroTutorial introTutorial;
     void Awake()
     {
         var promptTransform = transform.Find("InteractPrompt");
@@ -37,6 +38,10 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         manager = FindObjectOfType<handsScript>();
         gordon = FindObjectOfType<GordonJumpscares>();
         source = FindObjectOfType<AudioSource>();
+        if (manager.inTutorial)
+        {
+            introTutorial = FindAnyObjectByType<IntroTutorial>();
+        }
     }
     void Update()
     {
@@ -72,6 +77,10 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         isCooked = true;
         rawMeat.SetActive(false);
         cookedMeat.SetActive(true);
+        if (manager.inTutorial)
+        {
+            introTutorial.OnPattyCooked();
+        }
         StartCoroutine(SetTimer());
     }
 

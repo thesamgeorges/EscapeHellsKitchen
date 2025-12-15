@@ -19,8 +19,10 @@ public class handsScript : MonoBehaviour
     public bool hasDungeonKey;
     public bool hasStorageKey;
     public Transform player;
+    public bool inTutorial;
     void Start()
     {
+        inTutorial = false;
         hasCoolerKey = false;
         hasDungeonKey = false;
         hasStorageKey = false; 

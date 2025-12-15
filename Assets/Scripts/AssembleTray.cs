@@ -11,6 +11,7 @@ public class AssembleTray : MonoBehaviour, IInteractable
     public GameObject topBun;
     public GameObject bottomBun;
     public GameObject plate;
+    private IntroTutorial introTutorial;
     int step;
     bool isCheese;
     TextMeshPro promptText; 
@@ -24,6 +25,10 @@ public class AssembleTray : MonoBehaviour, IInteractable
     {
         erase();
         manager = FindObjectOfType<handsScript>();
+        if (manager.inTutorial)
+        {
+            introTutorial = FindAnyObjectByType<IntroTutorial>();
+        }
     }
 
     void Update()
@@ -98,6 +103,10 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     step+=1;
                     manager.GetComponent<handsScript>().Set("nothing");
                     plate.SetActive(true);
+                    if (manager.inTutorial)
+                    {
+                        introTutorial.OnPlatePlacedOnTray();
+                    }
                 }
                 break;
             case 1: 
@@ -106,6 +115,10 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     step+=1;
                     manager.GetComponent<handsScript>().Set("nothing");
                     bottomBun.SetActive(true);
+                    if (manager.inTutorial)
+                    {
+                        introTutorial.OnFirstBunPlaced();
+                    }
                 }else if(manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     erase();
@@ -118,6 +131,10 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     step+=1;
                     manager.GetComponent<handsScript>().Set("nothing");
                     cookedPatty.SetActive(true);
+                    if (manager.inTutorial)
+                    {
+                        introTutorial.OnBurgerAssembled();
+                    }
                 }else if (manager.GetComponent<handsScript>().Get() == "cheese patty")
                 {
                     step+=1;
@@ -137,6 +154,10 @@ public class AssembleTray : MonoBehaviour, IInteractable
                     step+=1;
                     manager.GetComponent<handsScript>().Set("nothing");
                     lettuce.SetActive(true);
+                    if (manager.inTutorial)
+                    {
+                        introTutorial.OnLettucePlaced();
+                    }
                 }else if(manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     erase();
@@ -146,9 +167,13 @@ public class AssembleTray : MonoBehaviour, IInteractable
             case 4: 
                 if (manager.GetComponent<handsScript>().Get() == "bun")
                 {
-                    step+=1;
+                    step+=1;     
                     manager.GetComponent<handsScript>().Set("nothing");
                     topBun.SetActive(true);
+                    if (manager.inTutorial)
+                    {
+                        introTutorial.OnTopBunPlaced();
+                    }
                 }else if(manager.GetComponent<handsScript>().Get() == "nothing")
                 {
                     erase();
