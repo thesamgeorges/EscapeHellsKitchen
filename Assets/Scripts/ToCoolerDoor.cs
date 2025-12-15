@@ -9,6 +9,7 @@ public class ToCoolerDoor : MonoBehaviour
     void Start()
     {
         manager = FindObjectOfType<handsScript>();
+        
     }
     void OnTriggerEnter(Collider coll)
     {
