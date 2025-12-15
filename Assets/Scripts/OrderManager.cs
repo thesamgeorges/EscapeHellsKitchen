@@ -13,10 +13,17 @@ public class OrderManager : MonoBehaviour
     public string currentOrder;
     public bool hasOrder;
     private handsScript manager;
+    private IntroTutorial tut;
 
     void Start()
     {
         manager = FindAnyObjectByType<handsScript>();
+        if (manager.inTutorial == true)
+        {
+            tut = FindAnyObjectByType<IntroTutorial>();
+        }
+        ;
+        StartNewOrder();
     }
 
     public string Get()
@@ -34,15 +41,23 @@ public class OrderManager : MonoBehaviour
 
     public void StartNewOrder()
     {
-        hasOrder = true;
-        PlayerUI.SetActive(true); // makes the player's You have an order! UI popup appear
-        OrderTimer.GetComponent<timerManagerOrder>().ResetTime(); // resets the timer for popup
-        source.PlayOneShot(orderHereSound);
-        
-        System.Random random = new System.Random();
-        int choice = random.Next(2);
+        int choice;
+        if (manager.inTutorial == false)
+        {
+            PlayerUI.SetActive(true); // makes the player's You have an order! UI popup appear
+            OrderTimer.GetComponent<timerManagerOrder>().ResetTime(); // resets the timer for popup
+            source.PlayOneShot(orderHereSound);
 
-        if (manager.inTutorial == true){ choice = 0;}
+            System.Random random = new System.Random();
+            choice = random.Next(2);
+
+        }
+        else
+        {
+            choice = 0;
+        }
+
+        hasOrder = true;
 
         if (choice == 0)
         {
@@ -79,6 +94,12 @@ public class OrderManager : MonoBehaviour
             panel.SetActive(false); // have the panel gone by defaul
         }
         Debug.Log("Order completed!");
-        StartCoroutine(SetTimer());
+        if(manager.inTutorial==false){
+            StartCoroutine(SetTimer());
+        }
+        else
+        {
+            tut.OnBurgerDelivered();
+        }
     }
 }

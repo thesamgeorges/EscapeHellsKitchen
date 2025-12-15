@@ -22,7 +22,7 @@ public class handsScript : MonoBehaviour
     public bool inTutorial;
     void Start()
     {
-        inTutorial = false;
+        
         hasCoolerKey = false;
         hasDungeonKey = false;
         hasStorageKey = false; 

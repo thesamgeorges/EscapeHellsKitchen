@@ -22,12 +22,18 @@ public class TimerManager : MonoBehaviour
     }
     void Update ()
     {
-        if(manager.inTutorial){
-        TimeLeft = 120f - (Time.time - startTime);
-        TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
-        int minutes = Mathf.FloorToInt(TimeLeft/60);
-        int seconds = Mathf.FloorToInt(TimeLeft%60);
+        if(manager.inTutorial==false){
+            TimeLeft = 600f - (Time.time - startTime);
+            TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
+            int minutes = Mathf.FloorToInt(TimeLeft/60);
+            int seconds = Mathf.FloorToInt(TimeLeft%60);
 
-        txt.text = $"Time Left: {minutes:00}:{seconds:00}"; 
-    }
+            txt.text = $"Time Left: {minutes:00}:{seconds:00}";
+        }else
+        {
+          txt.text = "";
+          resetTime();
+        }
+}
+
 }

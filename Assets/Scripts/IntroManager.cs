@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.XR;
-
+using System;
+using System.Collections;
 public class IntroTutorial : MonoBehaviour
 {
 
     [Header("Gordon Movement")]
+    private OrderManager orderManager;
     public GordonMovement gordonMover;
 
     public Transform gordonAtPlateStep;
@@ -53,6 +55,7 @@ public class IntroTutorial : MonoBehaviour
     {
         manager = FindAnyObjectByType<handsScript>();
         manager.inTutorial = true;
+        orderManager = FindAnyObjectByType<OrderManager>();
     }
     public void BeginTutorial()
     {
@@ -134,14 +137,19 @@ public class IntroTutorial : MonoBehaviour
 
             case TutorialStep.Complete:
                 dialogueText.text = "Now you know how to make a propa burger. Hope you're ready for your totally normal first day at Hell's Kitchen.";
-                tutorialActive = false;
-                tutorialComplete = true;
-                manager.inTutorial = false;
-                SceneLoader.Instance.LoadKitchenScene();
+                StartCoroutine(SetTimer());
                 break;
         }
     }
-
+        IEnumerator SetTimer()
+    {           yield return new WaitForSeconds(4f);
+                tutorialActive = false;
+                tutorialComplete = true;
+                manager.inTutorial = false;
+                orderManager.StartNewOrder();
+                SceneLoader.Instance.LoadKitchenScene();
+                SceneLoader.Instance.UnloadScene("TutorialScene");
+    }
     // ----------------- Hooks called from interactables -----------------
 
     public void OnPlatePickedUp()

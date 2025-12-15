@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,12 +12,13 @@ public class SceneLoader : MonoBehaviour
     public GameObject Player;
     public GameObject canvas;
     public GameObject manager;
-    public OrderManager orderManager;
+    public GameObject orderManager;
     void Start()
     {
         LoadMenu();
         Player.SetActive(false);
         canvas.SetActive(false);
+        orderManager.SetActive(false);
     }
 
     void Awake()
@@ -41,6 +43,7 @@ public class SceneLoader : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("TutorialScene"));
             Player.SetActive(true);
             canvas.SetActive(true);
+            orderManager.SetActive(true);
             manager.GetComponent<handsScript>().inTutorial = true;
             teleport(new Vector3(3.24f, 0.84f, 16.85f));
             player.rotation=Quaternion.Euler(0f, 206.105f, 0f);
@@ -54,6 +57,7 @@ public class SceneLoader : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainMenu"));
             canvas.SetActive(false);
             Player.SetActive(false);
+            orderManager.SetActive(false);
         };  
     }
     public void LoadCageScene(bool inCage)
@@ -77,9 +81,11 @@ public class SceneLoader : MonoBehaviour
         var op = SceneManager.LoadSceneAsync("KitchenScene", LoadSceneMode.Additive);
         op.completed += _ =>
         {
+            manager.GetComponent<handsScript>().inTutorial = false;
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("KitchenScene"));
             Player.SetActive(true);
             canvas.SetActive(true);
+            orderManager.SetActive(true);
             teleport(new Vector3(3.24f, 0.84f, 16.85f));
         };  
         

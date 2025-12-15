@@ -9,7 +9,7 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
     private handsScript manager;
     private OrderManager orderManager;
     public GameObject car;
-    void Awake()
+    void Start()
     {
         manager = FindObjectOfType<handsScript>();
         orderManager = FindObjectOfType<OrderManager>();
@@ -19,7 +19,7 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
     public void Interact()
     {
 
-        if (manager.GetComponent<handsScript>().Get() == orderManager.GetComponent<OrderManager>().Get())
+        if (manager.Get() == orderManager.Get())
         {
             AudioSource.PlayOneShot(soundEffect);
             orderManager.CompleteOrder();

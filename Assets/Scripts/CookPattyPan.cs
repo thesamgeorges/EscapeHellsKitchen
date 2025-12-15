@@ -87,7 +87,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     IEnumerator SetTimer()
     {
         yield return new WaitForSeconds(5f);
-        if(empty == false)
+        if(empty == false && manager.GetComponent<handsScript>().inTutorial == false)
         {
             isBurnt = true;
             isCooked = false;
