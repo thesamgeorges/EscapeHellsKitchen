@@ -6,8 +6,12 @@ using UnityEngine;
 public class boxNote : MonoBehaviour, IInteractable
 {
     public GameObject note;
-    public GameObject manager;
+    private handsScript manager;
 
+    void Start()
+    {
+        manager = FindObjectOfType<handsScript>();
+    } 
     public void Interact()
     {
         manager.GetComponent<handsScript>().openNote(note);

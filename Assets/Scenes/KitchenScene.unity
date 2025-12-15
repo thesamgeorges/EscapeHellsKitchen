@@ -3566,6 +3566,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+--- !u!1 &663995015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+  m_PrefabInstance: {fileID: 663995014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &668630842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6891,7 +6896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1198749314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8197,6 +8202,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 663995015}
     - target: {fileID: 7218404989349656719, guid: 30949b1de49b04dea86a7de2fccf7766, type: 3}
       propertyPath: gordon
       value: 

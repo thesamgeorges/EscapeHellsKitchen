@@ -11,7 +11,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
     public GameObject rawMeat;
     public GameObject cheese;
     public GameObject burnt;
-    public AudioSource source;
+    private AudioSource source;
     public AudioClip sizzle;
     private bool isCooked;
     private bool isCheese;
@@ -36,6 +36,7 @@ public class CookPattyPan : MonoBehaviour, IInteractable
         isBurnt = false;
         manager = FindObjectOfType<handsScript>();
         gordon = FindObjectOfType<GordonJumpscares>();
+        source = FindObjectOfType<AudioSource>();
     }
     void Update()
     {

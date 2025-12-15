@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToCoolerDoor : MonoBehaviour
+public class ToStorageDoorCooler : MonoBehaviour
 {
     private handsScript manager;
     void Start()
@@ -12,12 +12,13 @@ public class ToCoolerDoor : MonoBehaviour
     }
     void OnTriggerEnter(Collider coll)
     {
+
         GameObject collidedWith = coll.gameObject;
 
-        if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasCoolerKey == true)
+        if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasStorageKey == true)
         {
-            SceneLoader.Instance.LoadCoolerScene();
-            SceneLoader.Instance.UnloadScene("StorageScene");
+            SceneLoader.Instance.LoadStorageScene();
+            SceneLoader.Instance.UnloadScene("CoolerScene");
         }
          
     }

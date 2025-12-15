@@ -10,6 +10,7 @@ public class OrderManager : MonoBehaviour
     public AudioSource source;
     public AudioClip orderHereSound;
     public string currentOrder;
+    public bool hasOrder;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class OrderManager : MonoBehaviour
 
     public void StartNewOrder()
     {
+        hasOrder = true;
         PlayerUI.SetActive(true); // makes the player's You have an order! UI popup appear
         OrderTimer.GetComponent<timerManagerOrder>().ResetTime(); // resets the timer for popup
         source.PlayOneShot(orderHereSound);
@@ -66,6 +68,7 @@ public class OrderManager : MonoBehaviour
 
     public void CompleteOrder()
     {
+        hasOrder = false;
         PlayerUI.SetActive(false);
         foreach (GameObject panel in orderPanels)
         {

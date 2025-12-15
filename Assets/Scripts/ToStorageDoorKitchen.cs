@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToStorageDoor : MonoBehaviour
+public class ToStorageDoorKitchen : MonoBehaviour
 {
     private handsScript manager;
     void Start()
@@ -19,8 +19,6 @@ public class ToStorageDoor : MonoBehaviour
         {
             SceneLoader.Instance.LoadStorageScene();
             SceneLoader.Instance.UnloadScene("KitchenScene");
-            SceneLoader.Instance.UnloadScene("CoolerScene");
-            SceneLoader.Instance.UnloadScene("CageScene");
         }
          
     }

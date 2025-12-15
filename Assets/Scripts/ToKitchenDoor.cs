@@ -19,7 +19,6 @@ public class ToKitchenDoor : MonoBehaviour
         {
             SceneLoader.Instance.LoadKitchenScene();
             SceneLoader.Instance.UnloadScene("StorageScene");
-            SceneLoader.Instance.UnloadScene("CoolerScene");
         }
          
     }
