@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7613760640264799097, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8481121218882601923, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: gordon
       value: 
@@ -331,7 +335,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4218192888192848812, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
   m_PrefabInstance: {fileID: 578243173}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1364594772}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 957eaf37f4185844fae9ebd0d96c757f, type: 3}
@@ -422,6 +426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 578243181}
+  Player: {fileID: 1364594772}
+  canvas: {fileID: 1431526305}
 --- !u!4 &706933743
 Transform:
   m_ObjectHideFlags: 0
@@ -518,6 +524,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5389761506816956619, guid: 3e6d1a5dc440a46f0ab8ba45cc5f8a9b, type: 3}
   m_PrefabInstance: {fileID: 918232292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1364594772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7613760640264799097, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+  m_PrefabInstance: {fileID: 578243173}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1366876575
 PrefabInstance:
@@ -644,7 +655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1431526306
 MonoBehaviour:
   m_ObjectHideFlags: 0

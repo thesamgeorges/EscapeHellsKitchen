@@ -8,6 +8,8 @@ public class SceneLoader : MonoBehaviour
     public Transform player;
     public static SceneLoader Instance;
     CharacterController cc;
+    public GameObject Player;
+    public GameObject canvas;
     void Start()
     {
         LoadMenu();
@@ -27,12 +29,25 @@ public class SceneLoader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void LoadTutorial()
+    {
+        var op = SceneManager.LoadSceneAsync("TutorialScene", LoadSceneMode.Additive);
+        op.completed += _ =>
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("TutorialScene"));
+            Player.SetActive(true);
+            canvas.SetActive(true);
+            teleport(new Vector3(3.24f, 0.84f, 16.85f));
+        };  
+    }
     public void LoadMenu()
     {
         var op = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
         op.completed += _ =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainMenu"));
+            canvas.SetActive(false);
+            Player.SetActive(false);
         };  
     }
     public void LoadCageScene(bool inCage)
@@ -57,6 +72,8 @@ public class SceneLoader : MonoBehaviour
         op.completed += _ =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("KitchenScene"));
+            Player.SetActive(true);
+            canvas.SetActive(true);
             teleport(new Vector3(3.24f, 0.84f, 16.85f));
         };  
         
