@@ -3,6 +3,13 @@ using TMPro;
 
 public class IntroTutorial : MonoBehaviour
 {
+
+    [Header("Gordon Movement")]
+    public GordonMovement gordonMover;
+
+    public Transform gordonAtPlateStep;
+    public Transform gordonAtBunStep;
+    public Transform gordonAtPattyStep;
     public enum TutorialStep
     {
         None,
@@ -61,6 +68,8 @@ public class IntroTutorial : MonoBehaviour
         {
             case TutorialStep.GetPlate:
                 dialogueText.text = "Alright chef, first grab a plate.";
+                if (gordonMover != null && gordonAtPlateStep != null)
+                    gordonMover.SetTarget(gordonAtPlateStep);
                 break;
 
             case TutorialStep.PlacePlate:
@@ -69,18 +78,25 @@ public class IntroTutorial : MonoBehaviour
 
             case TutorialStep.GetBun:
                 dialogueText.text = "Good. Now grab a bun from the station.";
+                if (gordonMover != null && gordonAtBunStep != null)
+                    gordonMover.SetTarget(gordonAtBunStep);
                 break;
 
             case TutorialStep.PlaceFirstBun:
                 dialogueText.text = "Now place the bun on the plate on the assembly tray.";
+                if (gordonMover != null && gordonAtPlateStep != null)
+                    gordonMover.SetTarget(gordonAtPlateStep);
                 break;
 
             case TutorialStep.GetPatty:
                 dialogueText.text = "Next, pick up raw beef.";
+                if (gordonMover != null && gordonAtPattyStep != null)
+                    gordonMover.SetTarget(gordonAtPattyStep);
                 break;
 
             case TutorialStep.PlaceRawMeatOnPan:
                 dialogueText.text = "Now place the raw beef on the pan to start cooking.";
+                
                 break;
 
             case TutorialStep.CookPatty:
@@ -90,14 +106,20 @@ public class IntroTutorial : MonoBehaviour
             case TutorialStep.AssembleBurger:
                 dialogueText.text =
                     "Patty’s cooked! Grab it from the pan and place it on the bun at the assembly tray.";
+                if (gordonMover != null && gordonAtBunStep != null)
+                    gordonMover.SetTarget(gordonAtPlateStep);
                 break;
 
             case TutorialStep.AddLettuce:
                 dialogueText.text = "Now add some lettuce to the burger.";
+                if (gordonMover != null && gordonAtPattyStep != null)
+                    gordonMover.SetTarget(gordonAtBunStep);
                 break;
 
             case TutorialStep.AddTopBun:
                 dialogueText.text = "Finally, add the top bun to finish the burger.";
+                if (gordonMover != null && gordonAtBunStep != null)
+                    gordonMover.SetTarget(gordonAtPlateStep);
                 break;
 
             case TutorialStep.DeliverBurger:
