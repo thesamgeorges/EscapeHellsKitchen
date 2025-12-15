@@ -8,7 +8,6 @@ public class Key : MonoBehaviour, IInteractable
 
     void Start()
     {
-        gameObject.SetActive(false);
         manager = FindObjectOfType<handsScript>();
     }
     public void showKey()

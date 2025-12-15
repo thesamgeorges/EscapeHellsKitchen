@@ -15,7 +15,7 @@ public class ToStorageDoorCooler : MonoBehaviour
 
         GameObject collidedWith = coll.gameObject;
 
-        if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasStorageKey == true)
+        if (collidedWith.CompareTag("Player")&& manager.GetComponent<handsScript>().hasCoolerKey == true)
         {
             SceneLoader.Instance.LoadStorageScene();
             SceneLoader.Instance.UnloadScene("CoolerScene");
