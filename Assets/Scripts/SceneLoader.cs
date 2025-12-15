@@ -43,6 +43,7 @@ public class SceneLoader : MonoBehaviour
             canvas.SetActive(true);
             manager.GetComponent<handsScript>().inTutorial = true;
             teleport(new Vector3(3.24f, 0.84f, 16.85f));
+            player.rotation=Quaternion.Euler(0f, 206.105f, 0f);
         };  
     }
     public void LoadMenu()

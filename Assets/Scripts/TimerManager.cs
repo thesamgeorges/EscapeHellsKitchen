@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
+using UnityEngine.XR;
 
 public class TimerManager : MonoBehaviour
 {
     private float startTime;
     private float TimeLeft;
     public TextMeshProUGUI txt;
+    private handsScript manager;
 
     void Start()
+    { manager = FindAnyObjectByType<handsScript>();}
+
+    void resetTime()
     {
-        startTime = Time.time;
+       startTime = Time.time; 
     }
     void Update ()
     {
+        if(manager.inTutorial){
         TimeLeft = 120f - (Time.time - startTime);
         TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
         int minutes = Mathf.FloorToInt(TimeLeft/60);
