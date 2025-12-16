@@ -368,8 +368,8 @@ GameObject:
   - component: {fileID: 142406046}
   - component: {fileID: 142406045}
   - component: {fileID: 142406044}
-  - component: {fileID: 142406047}
   - component: {fileID: 142406048}
+  - component: {fileID: 142406049}
   m_Layer: 0
   m_Name: DoorToKitchen
   m_TagString: Untagged
@@ -442,18 +442,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &142406047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142406043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03213e000ad1d4250b0870f296db13b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &142406048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -475,6 +463,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5500567, y: 1.7429348, z: 0.22401875}
   m_Center: {x: -0.0000061216488, y: 0.87146133, z: 0.07889238}
+--- !u!114 &142406049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142406043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce1045e9509e414d93d947878290d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &161299179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5641,7 +5641,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1516758376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70b55a606d9744ca8abc8ad3fe29e9f4, type: 3}
+  m_Script: {fileID: 11500000, guid: d32936a8fe051495cb7662643e7047e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1526284581

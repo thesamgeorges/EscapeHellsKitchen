@@ -15,6 +15,7 @@ public class OrderManager : MonoBehaviour
     private handsScript manager;
     private IntroTutorial tut;
 
+
     void Start()
     {
         manager = FindAnyObjectByType<handsScript>();
@@ -34,7 +35,7 @@ public class OrderManager : MonoBehaviour
     IEnumerator SetTimer()
     {
         System.Random random = new System.Random();
-        float cooldown = random.Next(120);
+        float cooldown = random.Next(60,180);
         yield return new WaitForSeconds(cooldown);
         StartNewOrder();
     }

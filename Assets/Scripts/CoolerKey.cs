@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour, IInteractable
+public class CoolerKey : MonoBehaviour, IInteractable
 {
     private handsScript manager;
 

@@ -20,9 +20,17 @@ public class handsScript : MonoBehaviour
     public bool hasStorageKey;
     public Transform player;
     public bool inTutorial;
+    public int day;
+    public TextMeshProUGUI daytxt;
+    private EndOfDayDialogue end;
+    private TimedSceneTransition end2;
+    public GameObject UI;
+    public GameObject timerManager;
+    public bool isGame;
+
     void Start()
     {
-        
+        day = 1;
         hasCoolerKey = false;
         hasDungeonKey = false;
         hasStorageKey = false; 
@@ -35,6 +43,7 @@ public class handsScript : MonoBehaviour
         isNoteOpen = false;
         note = null;
         textMesh.text = "Currently holding: nothing";
+
     }
     public string Get()
     {
@@ -65,6 +74,12 @@ public class handsScript : MonoBehaviour
 
     }
 
+    public void IncrementDay()
+    {
+        day+=1;
+        timerManager.GetComponent<TimerManager>().resetTime();
+    }
+
     public void openNote(GameObject notes)
     {
         note = notes;
@@ -74,12 +89,26 @@ public class handsScript : MonoBehaviour
 
     void Update()
     {
+        end = FindAnyObjectByType<EndOfDayDialogue>();
+        end2 = FindAnyObjectByType<TimedSceneTransition>();
+        if (end != null||end2 != null)
+        {
+            UI.SetActive(false);
+            isGame = false;
+        }
+        else
+        {
+            UI.SetActive(true);
+            isGame = true;
+        }
+
         if (isNoteOpen && Input.GetKeyDown(KeyCode.E))
         {
             note.SetActive(false);
             isNoteOpen = false;
             note = null;
         }
+        daytxt.text = "Day "+ day.ToString();
     }
     public void Set(string item)
     {

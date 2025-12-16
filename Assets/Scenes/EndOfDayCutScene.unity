@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44425294, g: 0.4937008, b: 0.5730806, a: 1}
+  m_IndirectSpecularColor: {r: 0.44425243, g: 0.49370003, b: 0.57307994, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 066b4c45481984ca5a457bb1afab990d, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 4954bf4b751b24f4fbcc1d75428dc849, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1766,7 +1766,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8759826138688447842, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 2a6d561cbaf69f14d92dd9db7720e060, type: 3}
 --- !u!1 &290653547 stripped
 GameObject:
@@ -2328,8 +2331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2003502509fd2d46844ca6f95de1419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyName: sink key
-  manager: {fileID: 840232262}
 --- !u!1 &361248984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7088538835599911779, guid: fee2552d1310134479bcfd39eb52942f, type: 3}
@@ -3519,7 +3520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03213e000ad1d4250b0870f296db13b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!54 &509131597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4964,7 +4964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87423c72d9124e3fb8ba0047f419614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!4 &808757832
 Transform:
   m_ObjectHideFlags: 0
@@ -5241,6 +5240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7613760640264799097, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8481121218882601923, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: gordon
       value: 
@@ -5360,7 +5363,7 @@ SpriteRenderer:
   m_Size: {x: 15.872851, y: 22.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &863071023 stripped
@@ -6445,7 +6448,7 @@ SpriteRenderer:
   m_Size: {x: 23.039999, y: 17.279999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &945747214
@@ -6907,7 +6910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b34ea65b6ee4a77b1f754709ed5a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
   cookedPatty: {fileID: 1725342226}
   cheese: {fileID: 214725199}
   lettuce: {fileID: 863071023}
@@ -8350,7 +8352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1198749314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9915,17 +9917,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1360097151 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4218192888192848812, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
-  m_PrefabInstance: {fileID: 824897657}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957eaf37f4185844fae9ebd0d96c757f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1362738647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1169809139046944985, guid: cdbb65eaed9a2224cafb7d2a8e2d864f, type: 3}
@@ -9948,7 +9939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9e19c6d017a704e89bb328fcd06c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
   keyObject: {fileID: 338423186}
 --- !u!1001 &1383898838
 PrefabInstance:
@@ -10248,7 +10238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f96cc093c8f427785a6fe923a5c505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!1 &1428574879
 GameObject:
   m_ObjectHideFlags: 0
@@ -10417,7 +10406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1472694393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10887,7 +10876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51acd7f7ad9f4a0bb4ddb34a012af76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!4 &1575022577
 Transform:
   m_ObjectHideFlags: 0
@@ -10971,7 +10959,7 @@ MonoBehaviour:
   - 'You: Can I go home now?.  (Press enter to continue)'
   - 'Gordon: You can''t leave. Get in the bloody cage!!! (Press enter to continue)'
   cutScene: {fileID: 1578368138}
-  playerController: {fileID: 1360097151}
+  InCutScene: 0
 --- !u!222 &1578368139
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11900,7 +11888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e293fcd04a71c4bc9b43f2befcf095c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!4 &1666940602
 Transform:
   m_ObjectHideFlags: 0
@@ -12209,7 +12196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d59f8593ee7e40b8be3a8f5e0d3504a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!1 &1708780889
 GameObject:
   m_ObjectHideFlags: 0
@@ -13636,7 +13622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c0f5a3fa845e14cbf3c90e3b713e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 840232262}
 --- !u!1001 &1955270487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13756,10 +13741,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8721647586761863647, guid: 836253408a33acb4db3d15acebde831c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836253408a33acb4db3d15acebde831c, type: 3}
 --- !u!4 &1960849750 stripped
 Transform:

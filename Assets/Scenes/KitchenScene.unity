@@ -8592,7 +8592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1198749314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9360,7 +9360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1304917977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10199,6 +10199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9e19c6d017a704e89bb328fcd06c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyObject: {fileID: 0}
 --- !u!1001 &1383898838
 PrefabInstance:
   m_ObjectHideFlags: 0
