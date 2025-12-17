@@ -15,7 +15,7 @@ public class OrderManager : MonoBehaviour
     private handsScript manager;
     private IntroTutorial tut;
 
-
+    
     void Start()
     {
         manager = FindAnyObjectByType<handsScript>();
@@ -86,6 +86,19 @@ public class OrderManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(manager.cheatOrder == true)
+        {
+            CompleteOrder();
+            manager.cheatOrder = false; 
+        }
+        if (hasOrder == false)
+        {
+            OrderTimer.GetComponent<timerManagerOrder>().ResetTime();
+        }
+    }
+
     public void CompleteOrder()
     {
         hasOrder = false;
@@ -101,19 +114,6 @@ public class OrderManager : MonoBehaviour
         else
         {
             tut.OnBurgerDelivered();
-        }
-    }
-
-    void Update()
-    {
-        if (manager.cheatOrder == true)
-        {
-            CompleteOrder();
-            manager.cheatOrder = false;
-        }
-        if (hasOrder == false)
-        {
-            OrderTimer.GetComponent<timerManagerOrder>().ResetTime();
         }
     }
 }
