@@ -80,21 +80,14 @@ public class SceneLoader : MonoBehaviour
             orderManager.SetActive(false);
         };  
     }
-    public void LoadCageScene(bool inCage)
+    public void LoadCageScene()
     {
         var op = SceneManager.LoadSceneAsync("CageScene", LoadSceneMode.Additive);
         op.completed += _ =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("CageScene"));
+            teleport(new Vector3(-0.28f,1.33f,1f));
         };
-        if (inCage)
-        {
-           // teleport(new Vector3()); 
-        }
-        else
-        {
-           // teleport(new Vector3()); 
-        }
     }
     public void LoadKitchenScene()
     {
