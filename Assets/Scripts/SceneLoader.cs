@@ -13,6 +13,8 @@ public class SceneLoader : MonoBehaviour
     public GameObject canvas;
     public GameObject manager;
     public GameObject orderManager;
+    public GameObject cam;
+    public GameObject UI;
    
    public void unloadAll()
     {
@@ -138,7 +140,7 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("StorageScene"));
             teleport(new Vector3(-0.821461f, -1.07f, 3.15f));
-            player.localScale = new Vector3(1f,1f,1f);
+            player.localScale = new Vector3(1f,1.3f,1f);
         };  
     }
     public void LoadCoolerScene()

@@ -12,11 +12,13 @@ public class GordonJumpscares : MonoBehaviour
     public AudioClip ScareClip;
     public GameObject overlay;
     public MonoBehaviour scriptToDisable;
+    public handsScript manager;
 
     void Start()
     {
       body.SetActive(false);  
       overlay.SetActive(false);
+      
     }
     IEnumerator SetTimer()
     {
@@ -24,6 +26,20 @@ public class GordonJumpscares : MonoBehaviour
         body.SetActive(false);
         overlay.SetActive(false);
         scriptToDisable.enabled = true;
+    }
+
+    void Update()
+    {
+        
+    }
+    IEnumerator RandTimer()
+    {
+        System.Random random = new System.Random();
+        float cooldown = random.Next(60,180);
+        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(3);
+        scare();
+        RandTimer();
     }
     public void scare()
     {

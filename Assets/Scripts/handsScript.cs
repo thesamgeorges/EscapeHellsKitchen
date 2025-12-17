@@ -27,9 +27,11 @@ public class handsScript : MonoBehaviour
     public GameObject UI;
     public GameObject timerManager;
     public bool isGame;
+    public bool cheatOrder;
 
     void Start()
     {
+        cheatOrder = false;
         day = 1;
         hasCoolerKey = false;
         hasDungeonKey = false;
