@@ -874,7 +874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1162047232007117723, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3500036544591453552, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: cam
@@ -894,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936200183882505765, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8956894724868365969, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_LocalPosition.x
