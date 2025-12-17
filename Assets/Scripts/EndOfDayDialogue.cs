@@ -18,6 +18,7 @@ public class EndOfDayDialogue : MonoBehaviour
     [Header("Cage Scene")]
     public EndOfDayDialogue cutScene;            // reference to your tutorial script
     public MonoBehaviour playerController;    // your movement script
+    public SleepFader sleepFader; //for fading in and out of the cage scene
 
     private int currentIndex = 0;
     private bool dialogueActive = true;
@@ -69,14 +70,17 @@ public class EndOfDayDialogue : MonoBehaviour
     {
         dialogueActive = false;
 
-        // Hide Gordon's dialogue UI
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
 
-
-      
-            SceneManager.LoadScene("CageCutScene");
-        
-        
+        // instead of loading immediately:
+        if (sleepFader != null)
+        {
+            sleepFader.StartSleepFade("CageCutScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("CageCutScene"); // fallback
+        }
     }
 }
