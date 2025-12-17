@@ -103,4 +103,17 @@ public class OrderManager : MonoBehaviour
             tut.OnBurgerDelivered();
         }
     }
+
+    void Update()
+    {
+        if (manager.cheatOrder == true)
+        {
+            CompleteOrder();
+            manager.cheatOrder = false;
+        }
+        if (hasOrder == false)
+        {
+            OrderTimer.GetComponent<timerManagerOrder>().ResetTime();
+        }
+    }
 }

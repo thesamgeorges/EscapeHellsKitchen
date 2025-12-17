@@ -297,6 +297,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 456926927}
     - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: hasCoolerKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: timerManager
       value: 
       objectReference: {fileID: 233606080}

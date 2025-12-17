@@ -104,7 +104,7 @@ public class IntroTutorial : MonoBehaviour
                 break;
 
             case TutorialStep.PlaceRawMeatOnPan:
-                dialogueText.text = "Now place the raw beef on the pan to start cooking.";
+                dialogueText.text = "Now place the raw beef on the pan and let it cook for 5 seconds.";
                 
                 break;
 
