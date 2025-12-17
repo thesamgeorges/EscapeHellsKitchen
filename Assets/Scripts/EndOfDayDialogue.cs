@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR;
 
 public class EndOfDayDialogue : MonoBehaviour
 {
@@ -18,19 +17,15 @@ public class EndOfDayDialogue : MonoBehaviour
 
     [Header("Cage Scene")]
     public EndOfDayDialogue cutScene;            // reference to your tutorial script
-    private PlayerMovement playerController;    // your movement script
+    public MonoBehaviour playerController;    // your movement script
+    public SleepFader sleepFader; //for fading in and out of the cage scene
 
     private int currentIndex = 0;
     private bool dialogueActive = true;
 
-    public bool InCutScene;
-    private handsScript manager;
     void Start()
     {
-        manager = FindAnyObjectByType<handsScript>();
-        manager.isGame = false;
-        InCutScene = true;
-        playerController = FindAnyObjectByType<PlayerMovement>();
+
         if (lines.Length > 0)
         {
             currentIndex = 0;
@@ -74,12 +69,18 @@ public class EndOfDayDialogue : MonoBehaviour
     private void EndDialogue()
     {
         dialogueActive = false;
-        InCutScene = false;
-        // Hide Gordon's dialogue UI
-        if (dialoguePanel != null){dialoguePanel.SetActive(false);}
-        SceneLoader.Instance.loadCageCutScene();
-        SceneLoader.Instance.UnloadScene("EndOfDayCutScene");
-        
-        
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+
+        // instead of loading immediately:
+        if (sleepFader != null)
+        {
+            sleepFader.StartSleepFade("CageCutScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("CageCutScene"); // fallback
+        }
     }
 }
