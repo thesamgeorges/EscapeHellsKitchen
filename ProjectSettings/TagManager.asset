@@ -8,18 +8,21 @@ TagManager:
   - CanPickUp
   - FinalProduct
   - Draggable
+  - Interactible
+  - 'whatIsEnemy '
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Draggable
   - Water
   - UI
   - Interactable
   - 
   - Tomato
   - Bottom
-  - 
+  - Enemy
   - 
   - 
   - 
