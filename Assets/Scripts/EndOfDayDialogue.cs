@@ -76,11 +76,11 @@ public class EndOfDayDialogue : MonoBehaviour
         // instead of loading immediately:
         if (sleepFader != null)
         {
-            sleepFader.StartSleepFade("CageCutScene");
+            sleepFader.StartSleepFade("CageCutSceneWithNote");
         }
         else
         {
-            SceneManager.LoadScene("CageCutScene"); // fallback
+            SceneManager.LoadScene("CageCutSceneWithNote"); // fallback
         }
     }
 }
