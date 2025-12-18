@@ -11,7 +11,7 @@ Game Play:
 - While working at the restaurant, the player has side tasks of making food for the boss
 
 Goals: We are all doing a mix of design and implementation but on different sections of the game
-
+ 
 Ana:
 - Finalize each scene environment
 - Add colliders to all objects necessary
