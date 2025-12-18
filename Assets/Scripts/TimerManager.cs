@@ -27,7 +27,7 @@ public class TimerManager : MonoBehaviour
             resetTime();
         }
         if(manager.inTutorial==false){
-            TimeLeft = 10f - (Time.time - startTime);
+            TimeLeft = 360f - (Time.time - startTime);
             TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
             int minutes = Mathf.FloorToInt(TimeLeft/60);
             int seconds = Mathf.FloorToInt(TimeLeft%60);
