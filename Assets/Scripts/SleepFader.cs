@@ -11,6 +11,7 @@ public class SleepFader : MonoBehaviour
     public float fadeDuration = 2f;     // how long to fade
     public float holdBlackTime = 1f;    // how long to stay fully black
 
+
     void Start()
     {
         // Optional: start fully black and fade in at scene start
@@ -67,7 +68,12 @@ public class SleepFader : MonoBehaviour
         // load next scene
         if (!string.IsNullOrEmpty(sceneName))
         {
-            SceneManager.LoadScene(sceneName);
+            //SceneManager.LoadScene(sceneName);
+            if (sceneName == "CageCutScene")
+            {
+                SceneLoader.Instance.loadCageCutScene();
+                SceneLoader.Instance.UnloadScene("EndOfDayCutScene");
+            }
         }
     }
 

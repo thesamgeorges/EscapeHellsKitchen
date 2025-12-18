@@ -40,6 +40,15 @@ public class SceneLoader : MonoBehaviour
                 yield return SceneManager.UnloadSceneAsync("TutorialScene");
                 yield return SceneManager.UnloadSceneAsync("MainMenu");
                 break;
+            case "KitchenScene":
+                yield return SceneManager.UnloadSceneAsync("CageCutScene");
+                yield return SceneManager.UnloadSceneAsync("CageScene");
+                yield return SceneManager.UnloadSceneAsync("EndOfDayCutScene");
+                yield return SceneManager.UnloadSceneAsync("StorageScene");
+                yield return SceneManager.UnloadSceneAsync("CoolerScene");
+                yield return SceneManager.UnloadSceneAsync("TutorialScene");
+                yield return SceneManager.UnloadSceneAsync("MainMenu");
+                break;
             default:
                 LoadMenu();
                 break;
