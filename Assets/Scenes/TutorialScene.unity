@@ -1329,17 +1329,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3b21e4f3421eb6349afd4402b8197574, type: 3}
   m_PrefabInstance: {fileID: 110215218}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &124963259 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4348083011064374674, guid: c2e222e13691542af9795a83b20ac877, type: 3}
-  m_PrefabInstance: {fileID: 1765388257}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &133010636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,11 +1481,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84409fc6e1a9964197aa3554ed4c7da, type: 3}
---- !u!1 &168832185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8102027184712408408, guid: c2e222e13691542af9795a83b20ac877, type: 3}
-  m_PrefabInstance: {fileID: 1765388257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &189400364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e13a3c9aa94bae74aa2c9b93a5b7ed5f, type: 3}
@@ -5202,8 +5186,8 @@ MonoBehaviour:
   gordonAtPlateStep: {fileID: 2144617188}
   gordonAtBunStep: {fileID: 1690084607}
   gordonAtPattyStep: {fileID: 1524703510}
-  dialoguePanel: {fileID: 168832185}
-  dialogueText: {fileID: 124963259}
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
   tutorialPlateObject: {fileID: 1775312625}
   tutorialBunObject: {fileID: 2099050452}
   tutorialPattyObject: {fileID: 41088283}
@@ -5281,6 +5265,12 @@ MonoBehaviour:
   hasStorageKey: 0
   player: {fileID: 0}
   inTutorial: 0
+  day: 0
+  daytxt: {fileID: 0}
+  UI: {fileID: 0}
+  timerManager: {fileID: 0}
+  isGame: 0
+  cheatOrder: 0
 --- !u!1 &863071023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a82f637f337ff5b4c8c78c61d989ebd1, type: 3}
@@ -8837,9 +8827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fab137ee088834e9650bb30fcc6cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 124963259}
+  dialogueText: {fileID: 0}
   nameText: {fileID: 0}
-  dialoguePanel: {fileID: 168832185}
+  dialoguePanel: {fileID: 0}
   lines:
   - 'Gordon: Ello I''m Gordon Ramsey. Welcome to Hell''s Kitchen.'
   - 'Gordon: You must be my new chef. Let''s get you trained so you don''t mess up
@@ -12026,9 +12016,9 @@ RectTransform:
   m_Children:
   - {fileID: 1060532765}
   - {fileID: 1722279168}
+  - {fileID: 1765388258}
   - {fileID: 1894347202}
   - {fileID: 1560124165}
-  - {fileID: 1765388258}
   - {fileID: 1389959701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12680,12 +12670,20 @@ PrefabInstance:
       value: -709.133
       objectReference: {fileID: 0}
     - target: {fileID: 4348083011064374674, guid: c2e222e13691542af9795a83b20ac877, type: 3}
+      propertyPath: m_margin.y
+      value: -49.051178
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348083011064374674, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_margin.z
-      value: -676.1907
+      value: -930.7246
       objectReference: {fileID: 0}
     - target: {fileID: 4348083011064374674, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_fontSizeBase
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123852129911347422, guid: c2e222e13691542af9795a83b20ac877, type: 3}
+      propertyPath: m_Color.a
+      value: 0.50980395
       objectReference: {fileID: 0}
     - target: {fileID: 6123852129911347422, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_Color.b
@@ -12765,19 +12763,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.682678
+      value: 19.150635
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_AnchoredPosition.y

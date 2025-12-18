@@ -284,10 +284,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'time left: 2'
       objectReference: {fileID: 0}
-    - target: {fileID: 3290579963195423150, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5948698997301565603, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -300,6 +296,10 @@ PrefabInstance:
       propertyPath: daytxt
       value: 
       objectReference: {fileID: 456926927}
+    - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: hasCoolerKey
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: timerManager
       value: 
@@ -400,17 +400,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 236044332006554914, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
   m_PrefabInstance: {fileID: 578243173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &578243180 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
-  m_PrefabInstance: {fileID: 578243173}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578243178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e35c568a48744c13a0d6c84b2d78e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &578243181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7116061273728813682, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
@@ -495,8 +484,6 @@ MonoBehaviour:
   canvas: {fileID: 1431526305}
   manager: {fileID: 578243178}
   orderManager: {fileID: 918232293}
-  cam: {fileID: 578243177}
-  UI: {fileID: 352952685}
 --- !u!4 &706933743
 Transform:
   m_ObjectHideFlags: 0
@@ -891,7 +878,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1162047232007117723, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3500036544591453552, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: cam
@@ -902,10 +889,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 259700052}
     - target: {fileID: 3500036544591453552, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 578243180}
-    - target: {fileID: 3500036544591453552, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: scriptToDisable
       value: 
       objectReference: {fileID: 578243176}
@@ -915,7 +898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936200183882505765, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8956894724868365969, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_LocalPosition.x

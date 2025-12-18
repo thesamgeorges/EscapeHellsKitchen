@@ -14,8 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CageScene.unity
     guid: d2980c26be4494e08b1b293a428d44bc
-  - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
+  - enabled: 0
+    path: Assets/Scenes/NewTutorialScene.unity
     guid: 25383a80b91344e83bb09d94c59d866a
   - enabled: 1
     path: Assets/Scenes/StorageScene.unity

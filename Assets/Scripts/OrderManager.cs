@@ -15,7 +15,7 @@ public class OrderManager : MonoBehaviour
     private handsScript manager;
     private IntroTutorial tut;
 
-    
+
     void Start()
     {
         manager = FindAnyObjectByType<handsScript>();
@@ -35,7 +35,7 @@ public class OrderManager : MonoBehaviour
     IEnumerator SetTimer()
     {
         System.Random random = new System.Random();
-        float cooldown = random.Next(60,180);
+        float cooldown = random.Next(60, 180);
         yield return new WaitForSeconds(cooldown);
         StartNewOrder();
     }
@@ -78,20 +78,20 @@ public class OrderManager : MonoBehaviour
 
         if (currentOrder == "burger")
         {
-            orderPanels[0].SetActive(true);            
+            orderPanels[0].SetActive(true);
         }
         else if (currentOrder == "cheeseburger")
         {
-            orderPanels[1].SetActive(true);            
+            orderPanels[1].SetActive(true);
         }
     }
 
     void Update()
     {
-        if(manager.cheatOrder == true)
+        if (manager.cheatOrder == true)
         {
             CompleteOrder();
-            manager.cheatOrder = false; 
+            manager.cheatOrder = false;
         }
         if (hasOrder == false)
         {
@@ -108,7 +108,8 @@ public class OrderManager : MonoBehaviour
             panel.SetActive(false); // have the panel gone by defaul
         }
         Debug.Log("Order completed!");
-        if(manager.inTutorial==false){
+        if (manager.inTutorial == false)
+        {
             StartCoroutine(SetTimer());
         }
         else

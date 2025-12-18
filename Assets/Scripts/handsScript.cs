@@ -66,7 +66,7 @@ public class handsScript : MonoBehaviour
                 break;
             case 0:
                 life1.SetActive(false);
-                SceneLoader.Instance.LoadCageScene();
+                SceneLoader.Instance.LoadCageScene(true);
                 player.localPosition = new Vector3(-2.04976f, 1.48f, -3.3407f);
                 player.localRotation = Quaternion.Euler(0f, -2.125f, 0f);
                 break;

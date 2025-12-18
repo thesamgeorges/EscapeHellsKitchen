@@ -13,8 +13,6 @@ public class SceneLoader : MonoBehaviour
     public GameObject canvas;
     public GameObject manager;
     public GameObject orderManager;
-    public GameObject cam;
-    public GameObject UI;
    
    public void unloadAll()
     {
@@ -80,14 +78,21 @@ public class SceneLoader : MonoBehaviour
             orderManager.SetActive(false);
         };  
     }
-    public void LoadCageScene()
+    public void LoadCageScene(bool inCage)
     {
         var op = SceneManager.LoadSceneAsync("CageScene", LoadSceneMode.Additive);
         op.completed += _ =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("CageScene"));
-            teleport(new Vector3(-0.28f,1.33f,1f));
         };
+        if (inCage)
+        {
+           // teleport(new Vector3()); 
+        }
+        else
+        {
+           // teleport(new Vector3()); 
+        }
     }
     public void LoadKitchenScene()
     {
@@ -109,10 +114,10 @@ public class SceneLoader : MonoBehaviour
         var op = SceneManager.LoadSceneAsync("EndOfDayCutScene", LoadSceneMode.Additive);
         op.completed += _ =>
         {
-            player.rotation=Quaternion.Euler(0f, 0f, 0f);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("EndOfDayCutScene"));
             teleport(new Vector3(1.35f, 0.84f, 13.23f));
-            player.rotation=Quaternion.Euler(-25f, 180f, 0f);
+            player.rotation=Quaternion.Euler(0f, 177.45f, 0f);
+            //player.rotation=Quaternion.Euler(-25f, 180f, 0f);
         };  
     }
     public void loadCageCutScene()
@@ -133,7 +138,7 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("StorageScene"));
             teleport(new Vector3(-0.821461f, -1.07f, 3.15f));
-            player.localScale = new Vector3(1f,1.3f,1f);
+            player.localScale = new Vector3(1f,1f,1f);
         };  
     }
     public void LoadCoolerScene()

@@ -87,7 +87,6 @@ public class IntroTutorial : MonoBehaviour
 
             case TutorialStep.GetBun:
                 dialogueText.text = "Good. Now grab a bun from the station.";
-                if (gordonMover != null && gordonAtBunStep != null)
                     gordonMover.SetTarget(gordonAtBunStep);
                 break;
 
@@ -98,13 +97,13 @@ public class IntroTutorial : MonoBehaviour
                 break;
 
             case TutorialStep.GetPatty:
-                dialogueText.text = "Next, pick up raw beef.";
+                dialogueText.text = "Next, pick up raw beef and place it in the pan. Let it cook for 5 seconds.";
                 if (gordonMover != null && gordonAtPattyStep != null)
                     gordonMover.SetTarget(gordonAtPattyStep);
                 break;
 
             case TutorialStep.PlaceRawMeatOnPan:
-                dialogueText.text = "Now place the raw beef on the pan to start cooking.";
+                dialogueText.text = "Now place the raw beef on the pan and let it cook for 5 seconds.";
                 
                 break;
 

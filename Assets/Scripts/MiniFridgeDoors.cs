@@ -34,7 +34,7 @@ public class MiniFridgeDoors : MonoBehaviour, IInteractable
             isOpen = true;   
         }else if(isOpen == true)
         {
-            SceneLoader.Instance.LoadCageScene();
+            SceneLoader.Instance.LoadCageScene(false);
             SceneLoader.Instance.UnloadScene("StorageScene");
         }
     }

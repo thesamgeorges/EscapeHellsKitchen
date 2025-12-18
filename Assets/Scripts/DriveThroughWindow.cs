@@ -11,6 +11,10 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
     public GameObject car;
     void Start()
     {
+        manager = FindObjectOfType<handsScript>();
+        orderManager = FindObjectOfType<OrderManager>();
+        gordon = FindObjectOfType<GordonJumpscares>();
+        AudioSource = FindObjectOfType<AudioSource>();
     }
     public void Interact()
     {
@@ -31,10 +35,6 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
 
     void Update()
     {
-        manager = FindObjectOfType<handsScript>();
-        orderManager = FindObjectOfType<OrderManager>();
-        gordon = FindObjectOfType<GordonJumpscares>();
-        AudioSource = FindObjectOfType<AudioSource>();
         if(orderManager.hasOrder == true)
         {
             car.SetActive(true);
