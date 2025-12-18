@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ChallengeManager : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class ChallengeManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI hitText;
     public TextMeshProUGUI resultText;
+
+    public GameObject enemy;
+    public GameObject keyPrefab;     // purely visual now
+    public Transform keySpawnPoint;  // optional — otherwise uses enemy position
 
     private int currentHits = 0;
     private float timeLeft;
@@ -20,7 +26,6 @@ public class ChallengeManager : MonoBehaviour
         resultText.text = "";
         hitText.text = "Hits: 0";
         timerText.text = "Time: " + timeLeft.ToString("0.00");
-
         challengeActive = true;
     }
 
@@ -55,8 +60,43 @@ public class ChallengeManager : MonoBehaviour
         challengeActive = false;
 
         if (success)
-            resultText.text = "YOU WIN!";
+        {
+            resultText.text = "YOU ESCAPED!";
+
+            // Spawn the key visual (optional)
+            if (keyPrefab != null)
+            {
+                Vector3 spawnPos = enemy != null ? enemy.transform.position : transform.position;
+                if (keySpawnPoint != null)
+                    spawnPos = keySpawnPoint.position;
+
+                // Instantiate(keyPrefab, spawnPos, Quaternion.identity);
+                Instantiate(keyPrefab, spawnPos, keyPrefab.transform.rotation);
+
+            }
+
+            // Remove the enemy
+            if (enemy != null)
+                Destroy(enemy);
+
+            // Return to menu after 2 seconds
+            StartCoroutine(ReturnToMenu());
+        }
         else
+        {
             resultText.text = "YOU LOSE!";
+            StartCoroutine(ReturnToMenu());
+        }
+    }
+
+    IEnumerator ReturnToMenu()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public bool IsActive()
+    {
+        return challengeActive;
     }
 }
