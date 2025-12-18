@@ -3,23 +3,16 @@ using UnityEngine;
 
 public class DriveThroughWindow : MonoBehaviour, IInteractable
 {
-    private AudioSource AudioSource;
+    public OrderManager orderManager;
+    public GameObject manager;
+    public AudioSource AudioSource;
     public AudioClip soundEffect;
-    private GordonJumpscares gordon;
-    private handsScript manager;
-    private OrderManager orderManager;
-    public GameObject car;
-    void Start()
-    {
-        manager = FindObjectOfType<handsScript>();
-        orderManager = FindObjectOfType<OrderManager>();
-        gordon = FindObjectOfType<GordonJumpscares>();
-        AudioSource = FindObjectOfType<AudioSource>();
-    }
+    public GameObject gordon;
+
     public void Interact()
     {
 
-        if (manager.Get() == orderManager.Get())
+        if (manager.GetComponent<handsScript>().Get() == orderManager.GetComponent<OrderManager>().Get())
         {
             AudioSource.PlayOneShot(soundEffect);
             orderManager.CompleteOrder();
@@ -30,18 +23,6 @@ public class DriveThroughWindow : MonoBehaviour, IInteractable
             gordon.GetComponent<GordonJumpscares>().scare();
             manager.GetComponent<handsScript>().removeLife();
             Console.WriteLine("ur not holding a burger");
-        }
-    }
-
-    void Update()
-    {
-        if(orderManager.hasOrder == true)
-        {
-            car.SetActive(true);
-        }
-        else
-        {
-            car.SetActive(false);
         }
     }
 }

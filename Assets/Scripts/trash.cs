@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class trash : MonoBehaviour, IInteractable
 {
-    private handsScript manager;
-    void Start()
-    {
-        manager = FindObjectOfType<handsScript>();
-    }
+    public GameObject manager;
     public void Interact()
     {
             manager.GetComponent<handsScript>().Set("nothing");  

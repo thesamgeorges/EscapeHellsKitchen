@@ -22,26 +22,18 @@ public class timerManagerOrder : MonoBehaviour
     }
     void Update ()
     {
-        if(manager.GetComponent<handsScript>().inTutorial==false){
-        
-            TimeLeft = 120f - (Time.time - startTime);
-            TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
-            int minutes = Mathf.FloorToInt(TimeLeft/60);
-            int seconds = Mathf.FloorToInt(TimeLeft%60);
+        TimeLeft = 300f - (Time.time - startTime);
+        TimeLeft = Mathf.Clamp(TimeLeft, 0f, 600f);
+        int minutes = Mathf.FloorToInt(TimeLeft/60);
+        int seconds = Mathf.FloorToInt(TimeLeft%60);
 
-            txt.text = $"Time Left: {minutes:00}:{seconds:00}";
+        txt.text = $"Time Left: {minutes:00}:{seconds:00}";
 
-            if (TimeLeft == 0)
-                {
-                    manager.GetComponent<handsScript>().removeLife();
-                    orderManager.GetComponent<OrderManager>().CompleteOrder();
-                    gordon.GetComponent<GordonJumpscares>().scare();
-                }
-        }else
+        if (TimeLeft == 0)
         {
-            ResetTime();
-            txt.text = "";
+            manager.GetComponent<handsScript>().removeLife();
+            orderManager.GetComponent<OrderManager>().CompleteOrder();
+            gordon.GetComponent<GordonJumpscares>().scare();
         }
-
     }
 }

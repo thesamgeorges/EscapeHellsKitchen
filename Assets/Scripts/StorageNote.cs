@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class StorageNote : MonoBehaviour, IInteractable
 {
     public GameObject note;
-    private handsScript manager;
-
-    void Start()
-    {
-        manager = FindObjectOfType<handsScript>();
-    }
+    public GameObject manager;
     public void Interact()
     {
         manager.GetComponent<handsScript>().openNote(note);

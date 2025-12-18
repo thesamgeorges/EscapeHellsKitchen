@@ -8,7 +8,7 @@ public class Ice : MonoBehaviour, IInteractable
     public GameObject ice;
     public GameObject ice2;
     public GameObject key;
-    private handsScript manager;
+    public GameObject manager;
     TextMeshPro promptText; 
     private int step;
 
@@ -20,7 +20,6 @@ public class Ice : MonoBehaviour, IInteractable
 
     void Start()
     {
-        manager = FindObjectOfType<handsScript>();
         step = 0;
         key.SetActive(false);
         ice.SetActive(true);

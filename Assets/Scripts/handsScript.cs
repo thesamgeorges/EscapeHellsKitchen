@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class handsScript : MonoBehaviour
 {
@@ -18,21 +17,8 @@ public class handsScript : MonoBehaviour
     public bool hasCoolerKey;
     public bool hasDungeonKey;
     public bool hasStorageKey;
-    public Transform player;
-    public bool inTutorial;
-    public int day;
-    public TextMeshProUGUI daytxt;
-    private EndOfDayDialogue end;
-    private TimedSceneTransition end2;
-    public GameObject UI;
-    public GameObject timerManager;
-    public bool isGame;
-    public bool cheatOrder;
-
     void Start()
     {
-        cheatOrder = false;
-        day = 1;
         hasCoolerKey = false;
         hasDungeonKey = false;
         hasStorageKey = false; 
@@ -45,7 +31,6 @@ public class handsScript : MonoBehaviour
         isNoteOpen = false;
         note = null;
         textMesh.text = "Currently holding: nothing";
-
     }
     public string Get()
     {
@@ -66,20 +51,11 @@ public class handsScript : MonoBehaviour
                 break;
             case 0:
                 life1.SetActive(false);
-                SceneLoader.Instance.LoadCageScene(true);
-                player.localPosition = new Vector3(-2.04976f, 1.48f, -3.3407f);
-                player.localRotation = Quaternion.Euler(0f, -2.125f, 0f);
                 break;
             default:
                 break;
         }
 
-    }
-
-    public void IncrementDay()
-    {
-        timerManager.GetComponent<TimerManager>().resetTime();
-        day+=1;
     }
 
     public void openNote(GameObject notes)
@@ -91,30 +67,12 @@ public class handsScript : MonoBehaviour
 
     void Update()
     {
-        end = FindAnyObjectByType<EndOfDayDialogue>();
-        end2 = FindAnyObjectByType<TimedSceneTransition>();
-        if (end != null||end2 != null)
-        {
-            UI.SetActive(false);
-            isGame = false;
-        }
-        else
-        {
-            UI.SetActive(true);
-            isGame = true;
-        }
-
-        if (isGame == false)
-        {
-            timerManager.GetComponent<TimerManager>().resetTime();
-        }
         if (isNoteOpen && Input.GetKeyDown(KeyCode.E))
         {
             note.SetActive(false);
             isNoteOpen = false;
             note = null;
         }
-        daytxt.text = "Day "+ day.ToString();
     }
     public void Set(string item)
     {

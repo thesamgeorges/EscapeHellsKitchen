@@ -99,8 +99,11 @@ public class GunSystem : MonoBehaviour
 
         //Graphics
         // Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
-        // Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+        GameObject hole = Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
+        Destroy(hole, 0.5f);
 
+        GameObject flash = Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+        Destroy(flash, 0.1f);
 
         bulletsLeft--;
         bulletsShot--;

@@ -98,10 +98,6 @@ MonoBehaviour:
   life2: {fileID: 8930192858406316835}
   life3: {fileID: 859753084262217908}
   order: {fileID: 9153933990599105209}
-  hasCoolerKey: 0
-  hasDungeonKey: 0
-  hasStorageKey: 0
-  player: {fileID: 7204244351244041457}
 --- !u!1 &859753084262217908
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,9 +486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1453627449907075883}
-  manager: {fileID: 236044332006554914}
-  orderManager: {fileID: 0}
-  gordon: {fileID: 0}
 --- !u!1 &3267108669446112856
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +631,6 @@ GameObject:
   - component: {fileID: 861606717976034759}
   - component: {fileID: 5165986945684688400}
   - component: {fileID: 636134748085282550}
-  - component: {fileID: 1066163145904907575}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -720,18 +712,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3290579963195423150}
   m_Enabled: 1
---- !u!114 &1066163145904907575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3290579963195423150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2974149c6fb01b409a280581634da96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3605093460522068565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1377,7 @@ MonoBehaviour:
   playerCamera: {fileID: 5165986945684688400}
   walkSpeed: 6
   runSpeed: 12
-  jumpPower: 2
+  jumpPower: 7
   gravity: 10
   lookSpeed: 7
   lookXLimit: 45
