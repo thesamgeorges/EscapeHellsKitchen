@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TimedSceneTransition : MonoBehaviour
 {
     [Tooltip("How long this scene should stay on screen (in seconds).")]
-    public float delay = 5f;
+    public float delay = 3f;
 
     [Tooltip("Name of the scene to load after the delay.")]
     public string nextSceneName;
@@ -31,7 +31,7 @@ public class TimedSceneTransition : MonoBehaviour
 
     private System.Collections.IEnumerator LoadAfterDelay()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         playerController.enabled = true;
         manager.isGame = true;
         SceneLoader.Instance.LoadKitchenScene();

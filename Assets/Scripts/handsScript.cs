@@ -78,8 +78,8 @@ public class handsScript : MonoBehaviour
 
     public void IncrementDay()
     {
-        day+=1;
         timerManager.GetComponent<TimerManager>().resetTime();
+        day+=1;
     }
 
     public void openNote(GameObject notes)
@@ -104,6 +104,10 @@ public class handsScript : MonoBehaviour
             isGame = true;
         }
 
+        if (isGame == false)
+        {
+            timerManager.GetComponent<TimerManager>().resetTime();
+        }
         if (isNoteOpen && Input.GetKeyDown(KeyCode.E))
         {
             note.SetActive(false);

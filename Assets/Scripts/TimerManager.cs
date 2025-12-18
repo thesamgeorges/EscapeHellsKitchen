@@ -38,15 +38,17 @@ public class TimerManager : MonoBehaviour
             {
                 if (manager.day == 1)
                 {
+                    manager.isGame = false;
                     manager.IncrementDay();
-                    SceneLoader.Instance.loadEndofDayOne();
-                    SceneLoader.Instance.unloadAll();
+                    SceneLoader.Instance.loadEndOfDayOne();
+                    SceneLoader.Instance.unloadAll("EndOfDayCutScene");
                 }
                 else
                 {
+                    manager.isGame = false;
                     manager.IncrementDay();
                     SceneLoader.Instance.loadCageCutScene();
-                    SceneLoader.Instance.unloadAll();
+                    SceneLoader.Instance.unloadAll("CageCutScene");
                 }
             }
 

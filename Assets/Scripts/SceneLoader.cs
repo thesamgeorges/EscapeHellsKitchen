@@ -14,21 +14,38 @@ public class SceneLoader : MonoBehaviour
     public GameObject manager;
     public GameObject orderManager;
    
-   public void unloadAll()
+   public void unloadAll(string CurrScene)
     {
-        StartCoroutine(kill());
+        StartCoroutine(kill(CurrScene));
     }
    
-    private IEnumerator kill()
+    private IEnumerator kill(string CurrScene)
     {
-        yield return SceneManager.UnloadSceneAsync("KitchenScene");
-        yield return SceneManager.UnloadSceneAsync("CageScene");
-        yield return SceneManager.UnloadSceneAsync("CageCutScene");
-        yield return SceneManager.UnloadSceneAsync("StorageScene");
-        yield return SceneManager.UnloadSceneAsync("CoolerScene");
-        yield return SceneManager.UnloadSceneAsync("TutorialScene");
-        yield return SceneManager.UnloadSceneAsync("MainMenu");
-        yield return SceneManager.UnloadSceneAsync("EndOfDayCutScene");
+        switch(CurrScene){
+            case "EndOfDayCutScene":
+                yield return SceneManager.UnloadSceneAsync("KitchenScene");
+                yield return SceneManager.UnloadSceneAsync("CageScene");
+                yield return SceneManager.UnloadSceneAsync("CageCutScene");
+                yield return SceneManager.UnloadSceneAsync("StorageScene");
+                yield return SceneManager.UnloadSceneAsync("CoolerScene");
+                yield return SceneManager.UnloadSceneAsync("TutorialScene");
+                yield return SceneManager.UnloadSceneAsync("MainMenu");
+                break;
+            case "CageCutScene":
+                yield return SceneManager.UnloadSceneAsync("KitchenScene");
+                yield return SceneManager.UnloadSceneAsync("CageScene");
+                yield return SceneManager.UnloadSceneAsync("EndOfDayCutScene");
+                yield return SceneManager.UnloadSceneAsync("StorageScene");
+                yield return SceneManager.UnloadSceneAsync("CoolerScene");
+                yield return SceneManager.UnloadSceneAsync("TutorialScene");
+                yield return SceneManager.UnloadSceneAsync("MainMenu");
+                break;
+            default:
+                LoadMenu();
+                break;
+        }
+        
+        
     }
    
     void Start()
@@ -85,14 +102,6 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("CageScene"));
         };
-        if (inCage)
-        {
-           // teleport(new Vector3()); 
-        }
-        else
-        {
-           // teleport(new Vector3()); 
-        }
     }
     public void LoadKitchenScene()
     {
@@ -109,7 +118,7 @@ public class SceneLoader : MonoBehaviour
         };  
         
     }
-    public void loadEndofDayOne()
+    public void loadEndOfDayOne()
     {
         var op = SceneManager.LoadSceneAsync("EndOfDayCutScene", LoadSceneMode.Additive);
         op.completed += _ =>

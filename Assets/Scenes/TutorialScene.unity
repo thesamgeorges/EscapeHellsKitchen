@@ -5186,8 +5186,8 @@ MonoBehaviour:
   gordonAtPlateStep: {fileID: 2144617188}
   gordonAtBunStep: {fileID: 1690084607}
   gordonAtPattyStep: {fileID: 1524703510}
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 1765388259}
+  dialogueText: {fileID: 1765388260}
   tutorialPlateObject: {fileID: 1775312625}
   tutorialBunObject: {fileID: 2099050452}
   tutorialPattyObject: {fileID: 41088283}
@@ -8255,7 +8255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102027184712408408, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_Pivot.x
@@ -10721,7 +10721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102027184712408408, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_Pivot.x
@@ -12315,7 +12315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102027184712408408, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
       propertyPath: m_Pivot.x

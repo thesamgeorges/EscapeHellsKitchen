@@ -80,7 +80,8 @@ public class EndOfDayDialogue : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("CageCutScene"); // fallback
+            SceneLoader.Instance.loadCageCutScene(); // fallback
+            SceneLoader.Instance.unloadAll("CageCutScene");
         }
     }
 }
