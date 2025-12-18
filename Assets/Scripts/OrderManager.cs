@@ -35,7 +35,7 @@ public class OrderManager : MonoBehaviour
     IEnumerator SetTimer()
     {
         System.Random random = new System.Random();
-        float cooldown = random.Next(60, 180);
+        float cooldown = random.Next(5, 20); //changed this to be quicker
         yield return new WaitForSeconds(cooldown);
         StartNewOrder();
     }
