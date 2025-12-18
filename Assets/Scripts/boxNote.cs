@@ -10,7 +10,7 @@ public class boxNote : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        manager.GetComponent<handsScript>().openNote(note);
+        manager.openNote(note);
     }
 
 }
