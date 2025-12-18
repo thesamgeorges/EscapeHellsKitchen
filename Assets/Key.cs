@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //show key when lock combination is correctly inputted
     public void showKey()
     {
         gameObject.SetActive(true);
