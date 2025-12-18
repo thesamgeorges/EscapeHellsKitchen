@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Start.unity
     guid: 6daf790aa00c946b297a8ea769a34eed
+  - enabled: 1
+    path: Assets/Scenes/CageCutSceneWithNote.unity
+    guid: b9146e9b81305d34db25d0f58e4b8025
   - enabled: 0
     path: Assets/Scenes/KitchenCopy.unity
     guid: 8386c15396331154fbeddc8503a33f48

@@ -16,8 +16,8 @@ public class EndOfDayDialogue : MonoBehaviour
     public string[] lines;
 
     [Header("Cage Scene")]
-    public EndOfDayDialogue cutScene;            // reference to your tutorial script
-    public MonoBehaviour playerController;    // your movement script
+    public EndOfDayDialogue cutScene;            // reference to the tutorial script
+    public MonoBehaviour playerController;    //  movement script
     public SleepFader sleepFader; //for fading in and out of the cage scene
 
     private int currentIndex = 0;
@@ -56,7 +56,7 @@ public class EndOfDayDialogue : MonoBehaviour
     {
         currentIndex++;
 
-        if (currentIndex >= lines.Length)
+        if (currentIndex >= lines.Length) //advance as player presses enter
         {
             EndDialogue();
         }
@@ -76,11 +76,11 @@ public class EndOfDayDialogue : MonoBehaviour
         // instead of loading immediately:
         if (sleepFader != null)
         {
-            sleepFader.StartSleepFade("CageCutSceneWithNote");
+            sleepFader.StartSleepFade("CageCutScene");
         }
         else
         {
-            SceneManager.LoadScene("CageCutSceneWithNote"); // fallback
+            SceneManager.LoadScene("CageCutScene"); // fallback
         }
     }
 }

@@ -35,7 +35,7 @@ public class GordonDialogue : MonoBehaviour
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
 
-        // Player should NOT move while Gordon talks
+        // Player should not move while Gordon talks
         if (playerController != null)
             playerController.enabled = false;
     }

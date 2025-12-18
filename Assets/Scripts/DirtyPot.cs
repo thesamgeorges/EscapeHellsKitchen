@@ -35,7 +35,7 @@ public class DirtyPot : MonoBehaviour, IInteractable
             else
                 Debug.LogWarning("Pot: keyObject is not assigned!");
 
-            // Remove the pot (or replace with an animation later)
+            // Remove the pot 
             gameObject.SetActive(false);
         }
         else
