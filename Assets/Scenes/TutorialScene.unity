@@ -8827,9 +8827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fab137ee088834e9650bb30fcc6cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 0}
+  dialogueText: {fileID: 1765388260}
   nameText: {fileID: 0}
-  dialoguePanel: {fileID: 0}
+  dialoguePanel: {fileID: 1765388259}
   lines:
   - 'Gordon: Ello I''m Gordon Ramsey. Welcome to Hell''s Kitchen.'
   - 'Gordon: You must be my new chef. Let''s get you trained so you don''t mess up
@@ -12808,6 +12808,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9017625537429403615, guid: c2e222e13691542af9795a83b20ac877, type: 3}
   m_PrefabInstance: {fileID: 1765388257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1765388259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8102027184712408408, guid: c2e222e13691542af9795a83b20ac877, type: 3}
+  m_PrefabInstance: {fileID: 1765388257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1765388260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4348083011064374674, guid: c2e222e13691542af9795a83b20ac877, type: 3}
+  m_PrefabInstance: {fileID: 1765388257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1768335093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3081820812582549772, guid: fee2552d1310134479bcfd39eb52942f, type: 3}
