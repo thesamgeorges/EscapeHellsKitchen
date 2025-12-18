@@ -14,7 +14,7 @@ public class boxNote : MonoBehaviour, IInteractable
     } 
     public void Interact()
     {
-        manager.openNote(note);
+       manager.openNote(note);
     }
 
 }

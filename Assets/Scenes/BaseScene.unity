@@ -293,17 +293,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 352952685}
     - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: note1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: daytxt
       value: 
       objectReference: {fileID: 456926927}
     - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: hasCoolerKey
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: timerManager
       value: 
       objectReference: {fileID: 233606080}
+    - target: {fileID: 6508951734851096792, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
+      propertyPath: hasStorageKey
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7116061273728813682, guid: 9e8ed311d8957cc459d2d3fc2e4c1375, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.24
@@ -898,7 +906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936200183882505765, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8956894724868365969, guid: 5dd88d9172aff4595bfc5e90d26dbb1c, type: 3}
       propertyPath: m_LocalPosition.x

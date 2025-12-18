@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class handsScript : MonoBehaviour
 {
+    public GameObject note1;
     public TMP_Text textMesh;
     public GameObject life1;
     public GameObject life2;
@@ -28,9 +29,11 @@ public class handsScript : MonoBehaviour
     public GameObject timerManager;
     public bool isGame;
     public bool cheatOrder;
+    private bool DelayDone;
 
     void Start()
     {
+        DelayDone = false;
         cheatOrder = false;
         day = 1;
         hasCoolerKey = false;
@@ -87,6 +90,7 @@ public class handsScript : MonoBehaviour
         note = notes;
         note.SetActive(true);
         isNoteOpen = true;
+        StartCoroutine(NoteDelay());
     }
 
     void Update()
@@ -108,11 +112,12 @@ public class handsScript : MonoBehaviour
         {
             timerManager.GetComponent<TimerManager>().resetTime();
         }
-        if (isNoteOpen && Input.GetKeyDown(KeyCode.E))
+        if (isNoteOpen && Input.GetKeyDown(KeyCode.E)&& DelayDone)
         {
             note.SetActive(false);
             isNoteOpen = false;
             note = null;
+            DelayDone = false;
         }
         daytxt.text = "Day "+ day.ToString();
     }
@@ -120,5 +125,11 @@ public class handsScript : MonoBehaviour
     {
         obj = item;
         textMesh.text = "Currently holding: " + obj;
+    }
+
+    private IEnumerator NoteDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        DelayDone = true;
     }
 }

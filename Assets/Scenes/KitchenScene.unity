@@ -8582,6 +8582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DishesPoster
       objectReference: {fileID: 0}
+    - target: {fileID: 1620877766558924921, guid: 0923221c3a5a34e1da94d3d88215928f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.99
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10655,6 +10659,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1077567168920594156, guid: 365d7aab1c2fe45c3acffcede7f12698, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.65
+      objectReference: {fileID: 0}
     - target: {fileID: 5663317093629255072, guid: 365d7aab1c2fe45c3acffcede7f12698, type: 3}
       propertyPath: m_Name
       value: DishesPoster2
