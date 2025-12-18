@@ -18,13 +18,14 @@ public class ExitDoor : MonoBehaviour
     }
     void OnTriggerEnter(Collider coll)
     {
-
+        //collision gameObject
         GameObject collidedWith = coll.gameObject;
 
 
+        //if the player collides with the door
         if (collidedWith.CompareTag("Player"))
         {
-
+            //load the cage scene
             SceneManager.LoadSceneAsync("CageScene");
 
         }

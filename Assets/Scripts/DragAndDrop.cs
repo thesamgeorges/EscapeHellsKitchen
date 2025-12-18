@@ -17,11 +17,13 @@ public class DragandDrop : MonoBehaviour
 
     private void Awake()
     {
+        //reference to main camera
         mainCamera = Camera.main;
     }
 
     private void OnEnable()
     {
+        //inspector input action
         mouseClick.Enable();
         mouseClick.performed += MousePressed;
     }
@@ -29,14 +31,18 @@ public class DragandDrop : MonoBehaviour
     private void OnDisable()
     {
         mouseClick.performed -= MousePressed;
+        //disable mouse click
         mouseClick.Disable();
     }
     private void MousePressed(InputAction.CallbackContext context)
     {
+        //ray from camera
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hit;
+        //if ray hits an object
         if (Physics.Raycast(ray, out hit))
         {
+            //hitting collider or draggable or has IDrag
             if (hit.collider != null && (hit.collider.gameObject.CompareTag("Draggable") || hit.collider.gameObject.layer == LayerMask.NameToLayer("Draggable") || hit.collider.gameObject.GetComponent<IDrag>() != null))
             {
                 StartCoroutine(DragUpdate(hit.collider.gameObject));
@@ -52,9 +58,11 @@ public class DragandDrop : MonoBehaviour
         while (mouseClick.ReadValue<float>() != 0)
         {
             Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            //if object has rigid body
             if (rb != null)
             {
                 Vector3 direction = ray.GetPoint(initialDistance) - clickedObject.transform.position;
+                //velocity to move object
                 rb.velocity = direction * mouseDragVelocitySpeed;
                 yield return waitForFixedUpdate;
             }
@@ -65,6 +73,7 @@ public class DragandDrop : MonoBehaviour
                 yield return null;
             }
         }
+        //end dragging
         iDragComponent?.onEndDrag();
     }
 }
