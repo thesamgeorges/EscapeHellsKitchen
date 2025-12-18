@@ -7,13 +7,12 @@ using UnityEngine;
 
 public class fridge : MonoBehaviour, IInteractable
 {
-    private handsScript manager;
+    public GameObject manager;
     public GameObject door;
     bool isOpen;
 
     void Start()
     {
-        manager = FindObjectOfType<handsScript>();
         door.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         isOpen = false;
     }

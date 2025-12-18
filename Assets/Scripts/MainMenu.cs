@@ -3,25 +3,27 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+   
+    [SerializeField] private string gameSceneName = "Kitchen Scene";
 
     public void PlayGame()
     {
         // Load the game scene
-        SceneLoader.Instance.LoadTutorial();
-        SceneLoader.Instance.UnloadScene("MainMenu");
+        SceneManager.LoadScene(gameSceneName);
     }
 
-    public void SkipTutorial()
+    public void OpenOptions()
     {
-       SceneLoader.Instance.LoadKitchenScene();
-       SceneLoader.Instance.UnloadScene("MainMenu");
+        // just log, or later open an options panel
+        Debug.Log("Options menu not implemented yet.");
     }
 
     public void QuitGame()
     {
+        Debug.Log("Quitting game...");
         Application.Quit();
-        SceneLoader.Instance.UnloadScene("MainMenu");
-   
+
+        
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

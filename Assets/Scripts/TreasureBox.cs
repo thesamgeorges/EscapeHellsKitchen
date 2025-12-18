@@ -5,12 +5,8 @@ using UnityEngine;
 
 public class TreasureBox : MonoBehaviour, IInteractable
 {
-    private handsScript manager;
+    public GameObject manager;
     public GameObject cold;
-    void Start()
-    {
-       manager = FindObjectOfType<handsScript>();
-    }
     public void Interact()
     {
         if (manager.GetComponent<handsScript>().Get()=="nothing"){

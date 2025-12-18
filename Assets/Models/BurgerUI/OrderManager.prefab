@@ -47,8 +47,4 @@ MonoBehaviour:
   orderPanels:
   - {fileID: 0}
   - {fileID: 0}
-  PlayerUI: {fileID: 0}
-  OrderTimer: {fileID: 0}
-  source: {fileID: 0}
-  orderHereSound: {fileID: 8300000, guid: 91dbe76d3d968416882c7f8462632af9, type: 3}
   currentOrder: 

@@ -35,7 +35,7 @@ public class TimedSceneTransition : MonoBehaviour
         playerController.enabled = true;
         manager.isGame = true;
         SceneLoader.Instance.LoadKitchenScene();
-        SceneLoader.Instance.unloadAll("KitchenScene");
+        SceneLoader.Instance.UnloadScene("CageCutScene");
         
     }
 }
